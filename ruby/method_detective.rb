@@ -23,7 +23,7 @@
 " suspects".insert(0, "the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+"The case of the disappearing last letter".chop
 # => "The case of the disappearing last lette"
 
 # "The mystery of the missing first letter".<???>
