@@ -4,14 +4,19 @@
 # declare variable client information and set it equal to an empty hash
 client_information = {}
 # ask user for client's name
+puts "Please enter client name:"
   # store name in variable (str)
 # ask user for client's age
+puts "Please enter client age:"
   # store age as variable (int)
 # ask user for client's number of children
+puts "Please enter client's number of children':"
   # store number of children as variable (int)
 # ask user for client's decor theme
+puts "Please enter client's decor theme:"
   # store decor theme as variable (str)
 # ask user if client has pet's (true or false)
+puts "Please enter if client has pet's (true or false):"
   # store response as boolean variable
 # print hash
 # ask user if anything needs to be updated (type 'none' to exit)
