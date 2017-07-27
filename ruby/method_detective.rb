@@ -32,7 +32,7 @@
 # "Elementary,    my   dear        Watson!"
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
+"z".each_byte {|b| print b, ' ' }
 # => 122
 # (What is the significance of the number 122 in relation to the character z?)
 
