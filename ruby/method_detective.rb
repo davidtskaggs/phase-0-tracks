@@ -24,6 +24,7 @@
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chop
+"The case of the disappearing last letter".slice(0...-1)
 # => "The case of the disappearing last lette"
 
 # "The mystery of the missing first letter".<???>
