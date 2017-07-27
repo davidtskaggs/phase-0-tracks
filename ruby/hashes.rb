@@ -53,9 +53,3 @@ end
 
 require 'pp'
 pp client_information
-
-
-
-
-
-
