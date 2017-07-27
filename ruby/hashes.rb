@@ -51,6 +51,9 @@ else
   client_information
 end
 
+require 'pp'
+pp client_information
+
 
 
 
