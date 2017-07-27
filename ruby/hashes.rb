@@ -2,6 +2,7 @@
 # Release 2: pseudocode and write a program that will allow an interior designer to enter the details of a given client: the client's name, age, number of children, decor theme, and so on (you can choose your own as long as it's a good mix of string, integer, and boolean data).
 
 # declare variable client information and set it equal to an empty hash
+client_information = {}
 # ask user for client's name
   # store name in variable (str)
 # ask user for client's age
@@ -19,3 +20,6 @@
     # store response as variable
     # update hash with updated value
 # print hash
+
+
+
