@@ -17,6 +17,7 @@
 # => "STOP! YOU’RE UNDER ARREST!"
 
 # "the usual".<???>
+"the usual" << " suspects"
 #=> "the usual suspects"
 
 # " suspects".<???>
