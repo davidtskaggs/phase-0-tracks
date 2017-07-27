@@ -27,7 +27,7 @@
 "The case of the disappearing last letter".slice(0...-1)
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter".slice(1..-1)
 # => "he mystery of the missing first letter"
 
 # "Elementary,    my   dear        Watson!"
