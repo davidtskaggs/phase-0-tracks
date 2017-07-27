@@ -30,7 +30,7 @@
 "The mystery of the missing first letter".slice(1..-1)
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!"
+"Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
 "z".each_byte {|b| print b, ' ' }
