@@ -4,10 +4,11 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-"iNvEsTiGaTiOn".swapcase
+a = "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
 "zom".insert(1, "o")
+"zom".insert(2, "o")
 # => “zoom”
 
 "enhance".center(15)
@@ -46,3 +47,5 @@
 
 "How many times does the letter 'a' appear in this string?".count "a"#
 # => 4
+
+a
