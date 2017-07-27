@@ -22,6 +22,7 @@
 #=> "the usual suspects"
 
 " suspects".insert(0, "the usual")
+" suspects".prepend("the usual")
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chop
