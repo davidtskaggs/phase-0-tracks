@@ -23,10 +23,14 @@ bronx_zoo = {
 }
 
 # Driver Code
+bronx_zoo
+bronx_zoo[:exhibits]
+bronx_zoo[:admission_price]
+bronx_zoo[:concession_stand_items]
+bronx_zoo[:exhibits][:bears][0].reverse
+bronx_zoo[:exhibits][:reptiles].slice(0)
+bronx_zoo[:admission_price][:child] = "FREE in July!"
+bronx_zoo[:concession_stand_items][:food].push("fruit")
+bronx_zoo[:concession_stand_items][:drinks].pop()
+bronx_zoo[:hours_of_operation] = "Open all day everyday!!!"
 p bronx_zoo
-p bronx_zoo[:exhibits]
-p bronx_zoo[:admission_price]
-p bronx_zoo[:concession_stand_items]
-p bronx_zoo[:exhibits][:bears][0].reverse
-p bronx_zoo[:exhibits][:reptiles].slice(0)
-p bronx_zoo[:admission_price][:child]
