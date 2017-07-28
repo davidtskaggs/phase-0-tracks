@@ -21,4 +21,9 @@ bronx_zoo = {
     drinks: ["water", "soda", "beer", "wine", "juice"]
   }
 }
+
+# Driver Code
 p bronx_zoo
+p bronx_zoo[:exhibits]
+p bronx_zoo[:admission_price]
+p bronx_zoo[:concession_stand_items]
