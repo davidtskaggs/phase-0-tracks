@@ -19,3 +19,11 @@ end
 
 # Release 1: Calculate Fibonacci Numbers
 # Add a method to your file that takes a number of Fibonacci terms to generate and returns an array of the terms.
+
+def fib_sequence(num)
+  arr = [0, 1]
+  while num > arr.length
+    arr.push(arr[-1] + arr[-2])
+  end
+  arr
+end
