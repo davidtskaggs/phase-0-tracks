@@ -16,3 +16,6 @@ def search(arr, i)
   end
   arr_index
 end
+
+# Release 1: Calculate Fibonacci Numbers
+# Add a method to your file that takes a number of Fibonacci terms to generate and returns an array of the terms.
