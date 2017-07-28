@@ -27,3 +27,6 @@ p bronx_zoo
 p bronx_zoo[:exhibits]
 p bronx_zoo[:admission_price]
 p bronx_zoo[:concession_stand_items]
+p bronx_zoo[:exhibits][:bears][0].reverse
+p bronx_zoo[:exhibits][:reptiles].slice(0)
+p bronx_zoo[:admission_price][:child]
