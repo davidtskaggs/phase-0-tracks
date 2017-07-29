@@ -40,6 +40,15 @@ end
   - I started this challenge late in the evening after a long day of studying. I quickly realize that I didn't have the energy to give to fully devote myself to understanding the concept. UPDATE: It is the next morning, and I feel fresh and ready to tackle a new challenge.
 
 4. Pseudocode a sorting method that takes an array of integers and uses a sorting algorithm. The method should return a sorted version of the array. Your pseudocode should not be Ruby-specific.
+  - Create a method for sorting an array
+    - Inside method, we want to create a return array, which will be the sorted array of numbers.
+    - Create a 'pivot' value, which starts as the first value from the initial array
+      - this value is going to be stored in the return array.
+    - Initiate a loop
+      - Compare each value in the unsorted array with items in the return array.
+        - IF the value is less than the current value, insert it before the current value.
+        - IF the value is more than the current value, move on to the next item.
+          - return a sorted array
 
 5Implement the sorting method in Ruby.
 =end
