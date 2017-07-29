@@ -50,5 +50,5 @@ end
         - IF the value is more than the current value, move on to the next item.
           - return a sorted array
 
-5Implement the sorting method in Ruby.
+5. Implement the sorting method in Ruby.
 =end
