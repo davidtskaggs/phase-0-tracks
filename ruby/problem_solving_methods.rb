@@ -27,3 +27,19 @@ def fib_sequence(num)
   end
   arr
 end
+
+# Release 2: Sort an Array
+=begin
+1. Choose a simple sorting algorithm to learn about. Bubble sort or insertion sort are good ones for beginners, but you're welcome to be more adventurous.
+  - Chosen Sorting Method: Insertion sort
+
+2. Form a conceptual understanding of how the algorithm works. What helps you grasp it? Do visualizations help? How can you find the right materials for yourself?
+  - I think it helps to first get an idea of what 'insertion sort' is and how it works. I did this by reading about insertion sort; Reading about its purpose and how it is used before even looking at any code. I think looked at some pseudocode for an insertion sort example. From there, I looked at an example. I think that reading about the purpose of insertion sort before looking at any actual code helped to me to get a better understanding. The visualizations helped after getting an idea from text. I was able to get a good idea of insertion sort from text, docs, and also some video's on Youtube and Udemy.
+
+3. Notice your emotional state as you tackle this algorithm: do you feel frustrated, underqualified, stupid, or overwhelmed? Or is it more like excitement and curiosity? How do you think these feelings affect your ability to learn?
+  - I started this challenge late in the evening after a long day of studying. I quickly realize that I didn't have the energy to give to fully devote myself to understanding the concept. UPDATE: It is the next morning, and I feel fresh and ready to tackle a new challenge.
+
+4. Pseudocode a sorting method that takes an array of integers and uses a sorting algorithm. The method should return a sorted version of the array. Your pseudocode should not be Ruby-specific.
+
+5Implement the sorting method in Ruby.
+=end
