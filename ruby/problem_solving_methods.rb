@@ -41,14 +41,29 @@ end
 
 4. Pseudocode a sorting method that takes an array of integers and uses a sorting algorithm. The method should return a sorted version of the array. Your pseudocode should not be Ruby-specific.
   - Create a method for sorting an array
-    - Inside method, we want to create a return array, which will be the sorted array of numbers.
-    - Create a 'pivot' value, which starts as the first value from the initial array
-      - this value is going to be stored in the return array.
-    - Initiate a loop
-      - Compare each value in the unsorted array with items in the return array.
-        - IF the value is less than the current value, insert it before the current value.
-        - IF the value is more than the current value, move on to the next item.
+   - Create each block to iterate through array
+    - Create an index variable that is equal to index minus 1
+    - WHILE index variable is greater than or equal to 0
+      - Break if array accessed at index variable  is less than or equal to current array value
+        - Set array accessed at index variable plus 1 equal to array accessed at index variable
+        - Decrement index value by 1
           - return a sorted array
 
 5. Implement the sorting method in Ruby.
 =end
+
+# Insertion Sort
+
+def sort_arr(array)
+  array.each_with_index do |value, index|
+    i = index - 1
+    while i >= 0
+      break if array[i] <= value
+      array[i + 1] = array[i]
+      i -= 1
+    end
+    array[i + 1] = value
+  end
+end
+# sort_arr([2,7,4,6,9,1,3,2,7])
+# sort_arr([9,1,8,2,7,3,6,5,2])
