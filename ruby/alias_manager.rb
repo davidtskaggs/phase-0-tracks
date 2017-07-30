@@ -28,7 +28,7 @@ Business Logic
 - define method that takes array of string letters
   - this method returns a string with the first letter in each word capitalized
 =end
-
+# Business Logic
 def alias_generator(input)
   vowel = 'aeiou'
   consonant = "bcdfghjklmnpqrstvwxyz"
@@ -57,6 +57,7 @@ def alias_generator(input)
   end
 end
 
+# User Interface
 puts "Welcome to the Alias Name Generator"
 puts "---------------------------------------------------------"
 puts "Overview: Enter name(s) to receive a report on Alias Names"
