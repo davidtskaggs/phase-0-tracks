@@ -28,3 +28,31 @@ Business Logic
 - define method that takes array of string letters
   - this method returns a string with the first letter in each word capitalized
 =end
+
+def alias_generator(input)
+  vowel = 'aeiou'
+  consonant = "bcdfghjklmnpqrstvwxyz"
+  input_reverse = input.downcase.split(" ").reverse.join(" ")
+  alias_name = []
+
+  i = 0
+  while i < input_reverse.length
+  if vowel.index(input_reverse[i]) != nil
+    if input_reverse[i] == "u"
+      alias_name << "a"
+    else
+      alias_name << vowel[vowel.index(input_reverse[i])+ 1]
+    end
+  elsif input_reverse[i] == " "
+    alias_name << " "
+  else
+    if input_reverse[i] == "z"
+      alias_name << "a"
+    else
+      alias_name << consonant[consonant.index(input_reverse[i])+1]
+    end
+  end
+  i += 1
+  $name_hash[input] = alias_name.join("")
+  end
+end
