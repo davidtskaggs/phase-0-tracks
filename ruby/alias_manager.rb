@@ -29,6 +29,7 @@ Business Logic
   - this method returns a string with the first letter in each word capitalized
 =end
 # Business Logic
+$name_hash = {}
 def alias_generator(input)
   vowel = 'aeiou'
   consonant = "bcdfghjklmnpqrstvwxyz"
