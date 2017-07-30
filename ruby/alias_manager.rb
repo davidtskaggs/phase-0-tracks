@@ -72,3 +72,5 @@ $name_hash.each do |key, value|
       puts "#{value} is also known as #{key}."
       puts "--------------------------------------------"
     end
+puts
+puts "Thanks for using the Alias Name Generator!"
