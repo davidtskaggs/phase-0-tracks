@@ -57,6 +57,24 @@ def alias_generator(input)
   end
 end
 
+puts "Welcome to the Alias Name Generator"
+puts "---------------------------------------------------------"
+puts "Overview: Enter name(s) to receive a report on Alias Names"
+puts
+puts "Instructions:"
+puts "- Search by First Name + Last name"
+puts "- Enter multiple names by pressing the 'return' key"
+puts "- When search is complete, type 'quit' + 'return' to exit"
+puts
+puts "- Example: Enter name(s):"
+puts "            Michael Bluth"
+puts "            Adam Pally"
+puts "            quit"
+puts "---------------------------------------------------------"
+puts
+
+puts "Enter name(s):"
+
 loop do
 
   name = gets.chomp
