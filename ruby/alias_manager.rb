@@ -56,3 +56,19 @@ def alias_generator(input)
   $name_hash[input] = alias_name.join("")
   end
 end
+
+loop do
+
+  name = gets.chomp
+
+  break if name == "quit"
+
+    alias_generator(name)
+end
+puts
+puts "Alias Generator Report:"
+puts
+$name_hash.each do |key, value|
+      puts "#{value} is also known as #{key}."
+      puts "--------------------------------------------"
+    end
