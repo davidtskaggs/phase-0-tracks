@@ -35,3 +35,8 @@ class Santa
     "That was a good #{cookie_type}"
   end
 end
+
+# new_santa = Santa.new("male", "white")
+# another_santa = Santa.new("female", "Latino")
+# next_santa = Santa.new("non-binary", "Prefer not to say")
+# lil_santa = Santa.new("male", "Native American")
