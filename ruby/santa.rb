@@ -18,6 +18,8 @@
   # reindeer_ranking, an array of reindeer from most preferred to least preferred. This is not passed in on initialization; it simply gets a default value of ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   # age, which is not passed in on initialization and defaults to 0
 
+# Release 2: Change an Attribute with a Method
+
 class Santa
   def initialize(gender, ethnicity)
     @gender = gender
@@ -33,6 +35,27 @@ class Santa
 
   def eat_milk_and_cookies(cookie_type)
     "That was a good #{cookie_type}"
+  end
+
+  def celebrate_birthday=(age)
+    @age = @age+1
+  end
+
+  def get_mad_at=(reindeer_name)
+    @reindeer_ranking.slice(reindeer_name)
+    @reindeer_ranking.push(reindeer_name)
+  end
+
+  def update_gender=(gender)
+    @gender = gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
   end
 end
 
