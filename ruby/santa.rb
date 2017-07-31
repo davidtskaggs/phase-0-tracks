@@ -52,6 +52,10 @@ class Santa
   end
 end
 
+santas = []
+example_genders = ["neutral", "agender", "female", "bigender", "male", "gender fluid", "N/A", "non-binary", "N/A", "prefer not to say", "man", "woman"]
+example_ethnicities = ["black", "Arab" "Latino", "white", "Japanese-African", "prefer not to say", "Native American", "N/A", "Spanish colonial crusader", "North African", "Nordic", "indiginious Canadian"]
+
 # new_santa = Santa.new("male", "white")
 # another_santa = Santa.new("female", "Latino")
 # next_santa = Santa.new("non-binary", "Prefer not to say")
