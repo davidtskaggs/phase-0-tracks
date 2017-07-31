@@ -61,3 +61,7 @@ end
 # lil_santa.eat_milk_and_cookies = "vanilla"
 # lil_santa.get_mad_at("Dasher")
 # lil_santa.update_gender = "female"
+# ?lil_santa.gender = "female"
+# lil_santa.celebrate_birthday
+# p lil_santa.age
+# p lil_santa.celebrate_birthday
