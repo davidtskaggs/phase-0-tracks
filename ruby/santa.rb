@@ -27,7 +27,7 @@ class Santa
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = age
     "initializing Santa instance..."
   end
 
@@ -39,24 +39,16 @@ class Santa
     puts "That was a good #{cookie_type} cookie!"
   end
 
-  def celebrate_birthday=(age)
+  def celebrate_birthday
     @age = @age+1
+  end
+
+  def age
+    @age = rand(140)
   end
 
   def get_mad_at(reindeer_name)
     @reindeer_ranking.push(@reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer_name)))
-  end
-
-  def update_gender=(updated_gender)
-    @gender = updated_gender
-  end
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
   end
 end
 
