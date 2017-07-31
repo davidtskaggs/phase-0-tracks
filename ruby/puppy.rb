@@ -19,6 +19,7 @@ CHARACTERISTICS ---------
 -Like ear rubs:
 -Friend of cats: no
 -Fur color: varies
+-Loyal: yes
 
 BEHAVIOR ----------------
 -Run
