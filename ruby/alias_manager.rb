@@ -66,7 +66,7 @@ end
 
 # User Interface
 puts "Welcome to the Alias Name Generator"
-puts "---------------------------------------------------------"
+puts "___________________________________________________________"
 puts "Overview: Enter name(s) to receive a report on Alias Names"
 puts
 puts "Instructions:"
@@ -78,7 +78,7 @@ puts "- Example: Enter name(s):"
 puts "            Michael Bluth"
 puts "            Adam Pally"
 puts "            quit"
-puts "---------------------------------------------------------"
+puts "___________________________________________________________"
 puts
 
 puts "Enter name(s):"
@@ -92,18 +92,25 @@ loop do
     alias_generator(name)
 end
 puts
-puts "*---------------------*"
-puts "Alias Generator Report:"
-puts "*---------------------*"
+puts "*---------------------------*"
+puts "   Alias Generator Report:"
 puts
-puts "--------------------------------------------"
+puts "      HIGHLY-CLASSIFIED"
+puts "*---------------------------*"
+puts
+puts "________________________________"
+
 i = 1
 $name_hash.each do |key, value|
-      puts "#{i}. #{value} is also known as #{key}."
-      puts "--------------------------------------------"
+      puts "#{i}:"
+      puts "Alias Name: '#{value}'"
+      puts "Confidental Name: #{key.upcase}"
+      puts "________________________________"
       i += 1
     end
 puts
-puts "------------------------------------------"
+puts
+puts "******************************************"
 puts "IMPORTANT: This information is Top Secret!"
-puts "------------------------------------------"
+puts "******************************************"
+puts "__________________________________________"
