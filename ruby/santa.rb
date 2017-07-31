@@ -10,8 +10,20 @@
   # - a 'eat_milk_and_cookies' method that takes a cookie type as a parameter and prints "That was a good [type of cookie]"
   # - a initialize method that prints "initializing Santa instance"
 
+# Release 1: Give Santa Attributes for Christmas
+# Pseudocode:
+ # Add the following attributes to Santa class:
+  # gender, which will be a string passed in on initialization
+  # ethnicity, which will be a string passed in on initialization
+  # reindeer_ranking, an array of reindeer from most preferred to least preferred. This is not passed in on initialization; it simply gets a default value of ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+  # age, which is not passed in on initialization and defaults to 0
+
 class Santa
-  def initialize
+  def initialize(gender, ethnicity)
+    @gender = gender
+    @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
     "initializing Santa instance..."
   end
 
