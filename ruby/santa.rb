@@ -33,7 +33,7 @@ class Santa
     "Ho, ho ho! Haaaappy Holidays!"
   end
 
-  def eat_milk_and_cookies=(cookie_type)
+  def eat_milk_and_cookies(cookie_type)
     "That was a good #{cookie_type}"
   end
 
@@ -41,9 +41,8 @@ class Santa
     @age = @age+1
   end
 
-  def get_mad_at=(reindeer_name)
-    @reindeer_ranking.slice(reindeer_name)
-    @reindeer_ranking.push(reindeer_name)
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.push(@reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer_name)))
   end
 
   def update_gender=(gender)
