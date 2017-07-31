@@ -58,6 +58,8 @@ def alias_generator(input)
   end
 end
 
+
+
 # User Interface
 puts "Welcome to the Alias Name Generator"
 puts "---------------------------------------------------------"
@@ -86,11 +88,18 @@ loop do
     alias_generator(name)
 end
 puts
+puts "*---------------------*"
 puts "Alias Generator Report:"
+puts "*---------------------*"
 puts
+puts "--------------------------------------------"
+i = 1
 $name_hash.each do |key, value|
-      puts "#{value} is also known as #{key}."
+      puts "#{i}. #{value} is also known as #{key}."
       puts "--------------------------------------------"
+      i += 1
     end
 puts
-puts "Thanks for using the Alias Name Generator!"
+puts "------------------------------------------"
+puts "IMPORTANT: This information is Top Secret!"
+puts "------------------------------------------"
