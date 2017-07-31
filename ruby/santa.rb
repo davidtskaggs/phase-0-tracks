@@ -21,6 +21,7 @@
 # Release 2: Change an Attribute with a Method
 
 class Santa
+  attr_accessor :gender
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
