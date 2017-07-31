@@ -34,7 +34,7 @@ class Santa
   end
 
   def eat_milk_and_cookies(cookie_type)
-    "That was a good #{cookie_type}"
+    puts "That was a good #{cookie_type} cookie!"
   end
 
   def celebrate_birthday=(age)
@@ -45,8 +45,8 @@ class Santa
     @reindeer_ranking.push(@reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer_name)))
   end
 
-  def update_gender=(gender)
-    @gender = gender
+  def update_gender=(updated_gender)
+    @gender = updated_gender
   end
 
   def age
@@ -62,3 +62,8 @@ end
 # another_santa = Santa.new("female", "Latino")
 # next_santa = Santa.new("non-binary", "Prefer not to say")
 # lil_santa = Santa.new("male", "Native American")
+# lil_santa.speak
+# lil_santa.eat_milk_and_cookies = "chocolate"
+# lil_santa.eat_milk_and_cookies = "vanilla"
+# lil_santa.get_mad_at("Dasher")
+# lil_santa.update_gender = "female"
