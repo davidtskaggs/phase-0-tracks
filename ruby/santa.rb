@@ -40,7 +40,7 @@ class Santa
   end
 
   def celebrate_birthday
-    @age = @age+1
+    @age = @age.next
   end
 
   def age
@@ -53,8 +53,13 @@ class Santa
 end
 
 santas = []
-example_genders = ["neutral", "agender", "female", "bigender", "male", "gender fluid", "N/A", "non-binary", "N/A", "prefer not to say", "man", "woman"]
-example_ethnicities = ["black", "Arab" "Latino", "white", "Japanese-African", "prefer not to say", "Native American", "N/A", "Spanish colonial crusader", "North African", "Nordic", "indiginious Canadian"]
+genders = ["neutral", "agender", "female", "bigender", "male", "gender fluid", "N/A", "non-binary", "N/A", "prefer not to say", "man", "woman"]
+ethnicities = ["black", "Arab" "Latino", "white", "Japanese-African", "prefer not to say", "Native American", "N/A", "Spanish colonial crusader", "North African", "Nordic", "indiginious Canadian"]
+
+def santa_make(gender_arr, ethnicity_arr)
+  santas_at_santacon = rand(1000)
+  ethnicity_arr. do
+end
 
 # new_santa = Santa.new("male", "white")
 # another_santa = Santa.new("female", "Latino")
