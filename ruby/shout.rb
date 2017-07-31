@@ -10,3 +10,8 @@
 # Shout.yell_happily("Howdy!")
 # Shout.yell_angrily("Get off my lawn")
 
+class Happy
+end
+
+class Angry
+end
