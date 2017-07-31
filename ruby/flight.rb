@@ -1,3 +1,6 @@
+module Flight
+end
+
 class Bird
 end
 
