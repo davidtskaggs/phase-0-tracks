@@ -56,13 +56,11 @@ def alias_generator(input)
         alias_name << consonant[consonant.index(input_reverse[i])+1]
       end
     end
-  i += 1
-  alias_name[0].capitalize!
-  $name_hash[input] = alias_name.join("")
+    i += 1
+    alias_name[0].capitalize!
+    $name_hash[input] = alias_name.join("")
   end
 end
-
-
 
 # User Interface
 puts "Welcome to the Alias Name Generator"
@@ -84,13 +82,11 @@ puts
 puts "Enter name(s):"
 
 loop do
-
   name = gets.chomp
-
   break if name == "quit"
-
-    alias_generator(name)
+  alias_generator(name)
 end
+
 puts
 puts "*---------------------------*"
 puts "   Alias Generator Report:"
