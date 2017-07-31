@@ -33,7 +33,7 @@ class Santa
     "Ho, ho ho! Haaaappy Holidays!"
   end
 
-  def eat_milk_and_cookies(cookie_type)
+  def eat_milk_and_cookies=(cookie_type)
     "That was a good #{cookie_type}"
   end
 
