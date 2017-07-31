@@ -63,7 +63,7 @@ end
 # next_santa = Santa.new("non-binary", "Prefer not to say")
 # lil_santa = Santa.new("male", "Native American")
 # lil_santa.speak
-# lil_santa.eat_milk_and_cookies = "chocolate"
+# lil_santa.eat_milk_and_cookies("chocolate")
 # lil_santa.eat_milk_and_cookies = "vanilla"
 # lil_santa.get_mad_at("Dasher")
 # lil_santa.update_gender = "female"
