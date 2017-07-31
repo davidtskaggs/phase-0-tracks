@@ -53,12 +53,24 @@ class Santa
 end
 
 santas = []
+number_of_atendees = []
 genders = ["neutral", "agender", "female", "bigender", "male", "gender fluid", "N/A", "non-binary", "N/A", "prefer not to say", "man", "woman"]
-ethnicities = ["black", "Arab" "Latino", "white", "Japanese-African", "prefer not to say", "Native American", "N/A", "Spanish colonial crusader", "North African", "Nordic", "indiginious Canadian"]
+ethnicities = ["black", "Arab", "Latino", "white", "Japanese-African", "prefer not to say", "Native American", "N/A", "Spanish colonial crusader", "North African", "Nordic", "indiginious Canadian", "new yorker", "meditterrean", "jewish", ""]
 
-def santa_make(gender_arr, ethnicity_arr)
-  santas_at_santacon = rand(1000)
-  ethnicity_arr. do
+def santa_maker(num_of_santas, gender_arr, ethnicity_arr, santa_arr)
+
+  puts "----------------------------------------------"
+  puts "Number of Santas at SantaCon this year: #{num_of_santas}"
+  puts "----------------------------------------------"
+  puts
+
+  i = 0
+  loop do
+    break if i == num_of_santas
+    santa_arr << santa = Santa.new(gender_arr.sample, ethnicity_arr.sample)
+    i += 1
+  end
+  santa_arr
 end
 
 # new_santa = Santa.new("male", "white")
@@ -74,3 +86,4 @@ end
 # lil_santa.celebrate_birthday
 # p lil_santa.age
 # p lil_santa.celebrate_birthday
+# santa_maker(rand(100), genders, ethnicities, santas)
