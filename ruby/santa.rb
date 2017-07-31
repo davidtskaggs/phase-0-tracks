@@ -21,11 +21,13 @@
 # Release 2: Change an Attribute with a Method
 
 class Santa
+  attr_accessor :gender
+  attr_reader :age, :ethnicity
   def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = age
     "initializing Santa instance..."
   end
 
@@ -33,33 +35,55 @@ class Santa
     "Ho, ho ho! Haaaappy Holidays!"
   end
 
-  def eat_milk_and_cookies=(cookie_type)
-    "That was a good #{cookie_type}"
+  def eat_milk_and_cookies(cookie_type)
+    puts "That was a good #{cookie_type} cookie!"
   end
 
-  def celebrate_birthday=(age)
-    @age = @age+1
-  end
-
-  def get_mad_at=(reindeer_name)
-    @reindeer_ranking.slice(reindeer_name)
-    @reindeer_ranking.push(reindeer_name)
-  end
-
-  def update_gender=(gender)
-    @gender = gender
+  def celebrate_birthday
+    @age = @age.next
   end
 
   def age
-    @age
+    @age = rand(140)
   end
 
-  def ethnicity
-    @ethnicity
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.push(@reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer_name)))
   end
+end
+
+santas = []
+number_of_atendees = []
+genders = ["neutral", "agender", "female", "bigender", "male", "gender fluid", "N/A", "non-binary", "N/A", "prefer not to say", "man", "woman"]
+ethnicities = ["black", "Arab", "Latino", "white", "Japanese-African", "prefer not to say", "Native American", "N/A", "Spanish colonial crusader", "North African", "Nordic", "indiginious Canadian", "new yorker", "meditterrean", "jewish", ""]
+
+def santa_maker(num_of_santas, gender_arr, ethnicity_arr, santa_arr)
+
+  puts "----------------------------------------------"
+  puts "Number of Santas at SantaCon this year: #{num_of_santas}"
+  puts "----------------------------------------------"
+  puts
+
+  i = 0
+  loop do
+    break if i == num_of_santas
+    santa_arr << santa = Santa.new(gender_arr.sample, ethnicity_arr.sample)
+    i += 1
+  end
+  santa_arr
 end
 
 # new_santa = Santa.new("male", "white")
 # another_santa = Santa.new("female", "Latino")
 # next_santa = Santa.new("non-binary", "Prefer not to say")
 # lil_santa = Santa.new("male", "Native American")
+# lil_santa.speak
+# lil_santa.eat_milk_and_cookies("chocolate")
+# lil_santa.eat_milk_and_cookies = "vanilla"
+# lil_santa.get_mad_at("Dasher")
+# lil_santa.update_gender = "female"
+# ?lil_santa.gender = "female"
+# lil_santa.celebrate_birthday
+# p lil_santa.age
+# p lil_santa.celebrate_birthday
+# santa_maker(rand(100), genders, ethnicities, santas)
