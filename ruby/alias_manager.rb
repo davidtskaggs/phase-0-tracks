@@ -30,7 +30,9 @@ Business Logic
 =end
 # Business Logic
 $name_hash = {}
+
 def alias_generator(input)
+
   vowel = 'aeiou'
   consonant = "bcdfghjklmnpqrstvwxyz"
   input_reverse = input.downcase.split(" ").reverse.join(" ")
@@ -38,22 +40,24 @@ def alias_generator(input)
 
   i = 0
   while i < input_reverse.length
-  if vowel.index(input_reverse[i]) != nil
-    if input_reverse[i] == "u"
-      alias_name << "a"
+    if vowel.index(input_reverse[i]) != nil
+      if input_reverse[i] == "u"
+        alias_name << "a"
+      else
+        alias_name << vowel[vowel.index(input_reverse[i])+ 1]
+      end
+    elsif input_reverse[i] == " "
+      alias_name << " "
+      alias_name << input_reverse[i+1].capitalize
     else
-      alias_name << vowel[vowel.index(input_reverse[i])+ 1]
+      if input_reverse[i] == "z"
+        alias_name << "a"
+      else
+        alias_name << consonant[consonant.index(input_reverse[i])+1]
+      end
     end
-  elsif input_reverse[i] == " "
-    alias_name << " "
-  else
-    if input_reverse[i] == "z"
-      alias_name << "a"
-    else
-      alias_name << consonant[consonant.index(input_reverse[i])+1]
-    end
-  end
   i += 1
+  alias_name[0].capitalize!
   $name_hash[input] = alias_name.join("")
   end
 end
