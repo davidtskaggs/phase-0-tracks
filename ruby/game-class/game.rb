@@ -37,4 +37,33 @@ class HangMan
     @word_dash_str = "-" * hangman_word.length
   end
 end
+
 # User Interface
+
+loop do
+  puts "Welcome to the Hangman game!"
+  puts "-------------------------------------------------"
+  puts "RULES:"
+  puts
+  puts "PLAYER 1:"
+  puts "- Enter a word to start the game!"
+  puts
+  puts "PLAYER 2:"
+  puts "- Take guesses at the word (one letter at a time!)"
+  puts "- We will provide the length of the hangman word (EX: '-----')"
+  puts "- You will have the exact amount of guesses as the length of the word"
+  puts "- If a correct letter is guessed, we will update the Hangman to reflect the progress"
+  puts
+  puts "-------------------------------------------------"
+  puts "HOW TO WIN..."
+  puts
+  puts "-If Player 2 guesses the word before they run out of guess, then Player 2 wins! "
+  puts "-Otherwise, Player 1 wins!"
+  puts
+  puts "-------------------------------------------------"
+  puts "Ready to get started? (enter 'start' to continue)"
+  puts "-------------------------------------------------"
+  start_game = gets.chomp
+  break if start_game == "start"
+end
+
