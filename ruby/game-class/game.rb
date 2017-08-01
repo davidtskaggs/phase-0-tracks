@@ -32,9 +32,24 @@ PSEUDOCODE:
 
 # Business Logic
 class HangMan
+  attr_accessor :word_dash_str
+
   def initialize(hangman_word)
     @hangman_word = hangman_word
     @word_dash_str = "-" * hangman_word.length
+  end
+
+  def display_word_dash_str
+    @word_dash_str
+  end
+
+  def letter_guesses(letter)
+    @hangman_word.split("").each_with_index do |hangman_word_split,index|
+      if letter == hangman_word_split
+        @word_dash_str[index] = letter
+      end
+    end
+    puts @word_dash_str
   end
 end
 
@@ -72,3 +87,21 @@ puts "Player 1: Please enter a word: "
 player_1_word = STDIN.noecho(&:gets).chomp
 
 new_game = HangMan.new(player_1_word)
+new_game.display_word_dash_str
+
+puts
+puts "-----------------------------------"
+puts "PLAYER 2: Here is your word string:"
+puts "** You have #{player_1_word.length} total guesses **"
+puts
+p new_game.display_word_dash_str
+puts "-----------------------------------"
+
+guess_count = 1
+loop do
+  puts "Guess a letter:"
+  individual_letter_guess = gets.chomp
+  new_game.letter_guesses(individual_letter_guess)
+  break if guess_count == player_1_word.length
+  guess_count += 1
+end
