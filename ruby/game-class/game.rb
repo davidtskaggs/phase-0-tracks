@@ -1,4 +1,5 @@
 # 6.7 Solo Challenge: A Game Class
+# David Skaggs - Golden Bears 2017
 =begin
 Prompt: Create a word-guessing game that meets the following specs:
   - Assume your driver code will handle input and output as far as the user is concerned. In other words, write a class designed for a computer program to use, not one designed for a human to use directly, then use driver code to bridge the gap between human and Ruby object.
