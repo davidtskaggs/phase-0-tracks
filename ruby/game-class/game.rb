@@ -67,3 +67,6 @@ loop do
   break if start_game == "start"
 end
 
+require 'io/console'
+puts "Player 1: Please enter a word: "
+player_1_word = STDIN.noecho(&:gets).chomp
