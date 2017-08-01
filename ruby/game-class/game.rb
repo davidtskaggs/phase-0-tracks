@@ -31,9 +31,8 @@ PSEUDOCODE:
 =end
 
 # Business Logic
-class
-
-  attr_accessor :guesses_arr, :word_dash_str
+class HangMan
+  attr_accessor :word_dash_str
 
   def initialize(hangman_word)
     @hangman_word = hangman_word
