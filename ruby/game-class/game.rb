@@ -42,6 +42,12 @@ class HangMan
   end
 
   def letter_guesses(letter)
+    @hangman_word.split("").each_with_index do |hangman_word_split,index|
+      if letter == hangman_word_split
+        @word_dash_str[index] = letter
+      end
+    end
+    puts @word_dash_str
   end
 end
 
