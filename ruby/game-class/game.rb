@@ -41,6 +41,8 @@ class HangMan
     @word_dash_str
   end
 
+  def letter_guesses(letter)
+  end
 end
 
 # User Interface
