@@ -85,3 +85,13 @@ puts "Player 1: Please enter a word: "
 player_1_word = STDIN.noecho(&:gets).chomp
 
 new_game = HangMan.new(player_1_word)
+new_game.display_word_dash_str
+
+puts
+puts "-----------------------------------"
+puts "PLAYER 2: Here is your word string:"
+puts "** You have #{player_1_word.length} total guesses **"
+puts
+p new_game.display_word_dash_str
+puts "-----------------------------------"
+
