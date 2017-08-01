@@ -12,6 +12,10 @@ PROMPT: Create a word-guessing game that meets the following specs:
 PSEUDOCODE:
 -Business Interface:
   - Create and define a game class
+    - Define an initialize method
+      - Pass parameter of hangman_word (player 1 input)
+      - Initialize instance variable that represents in dashes the length of the word.
+        - Ex: "-----"
 
 -User Interface:
   - Initiate loop do to print a series of strings:
@@ -23,4 +27,5 @@ PSEUDOCODE:
     - Store player one input in a variable and use 'noecho' to have the word not display on the screen (for cheating purposes)
       - Ex: require 'io/console'
       - Ex: player_1_word = STDIN.noecho(&:gets).chomp
+    - Initialize new game instance and pass player one's hangman word as the argument
 =end
