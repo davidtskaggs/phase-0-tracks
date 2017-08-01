@@ -36,6 +36,11 @@ class HangMan
     @hangman_word = hangman_word
     @word_dash_str = "-" * hangman_word.length
   end
+
+  def display_word_dash_str
+    @word_dash_str
+  end
+
 end
 
 # User Interface
