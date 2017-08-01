@@ -95,3 +95,11 @@ puts
 p new_game.display_word_dash_str
 puts "-----------------------------------"
 
+guess_count = 1
+loop do
+  puts "Guess a letter:"
+  individual_letter_guess = gets.chomp
+  new_game.letter_guesses(individual_letter_guess)
+  break if guess_count == player_1_word.length
+  guess_count += 1
+end
