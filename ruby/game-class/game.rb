@@ -29,3 +29,12 @@ PSEUDOCODE:
       - Ex: player_1_word = STDIN.noecho(&:gets).chomp
     - Initialize new game instance and pass player one's hangman word as the argument
 =end
+
+# Business Logic
+class HangMan
+  def initialize(hangman_word)
+    @hangman_word = hangman_word
+    @word_dash_str = "-" * hangman_word.length
+  end
+end
+# User Interface
