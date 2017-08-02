@@ -1,3 +1,7 @@
+# DBC Week 6: 6.2 Instance Methods
+# Mandatory Pairing: David Skaggs and Eliza Brine
+# Golden Bears 2017
+
 class Puppy
 
   def initialize
