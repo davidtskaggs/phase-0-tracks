@@ -72,7 +72,7 @@ loop do
   puts "-------------------------------------------------"
   puts "HOW TO WIN..."
   puts
-  puts "-If Player 2 guesses the word before they run out of guess, then Player 2 wins! "
+  puts "-If Player 2 guesses the word before they run out of guesses, then Player 2 wins! "
   puts "-Otherwise, Player 1 wins!"
   puts
   puts "-------------------------------------------------"
