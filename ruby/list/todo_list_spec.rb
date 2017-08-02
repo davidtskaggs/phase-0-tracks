@@ -1,3 +1,7 @@
+# DBC Week 6: 6.5 Testing a Class with RSpec
+# Mandatory Pairing: David Skaggs & Elise Poplawski
+# Golden Bears 2017
+
 require_relative 'list'
 
 describe TodoList do
