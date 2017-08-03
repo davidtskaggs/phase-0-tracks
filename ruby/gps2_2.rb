@@ -51,9 +51,9 @@ def update_quantity (list, item, quantity)
 end
 
 # Method to print a list and make it look pretty
-# input: global array
-# steps: iterate through the array using an each metohd
-# output: print out the hash specify the quantity and item and keys and values
+# input: hash
+# steps: iterate through the hash using an each metohd
+# output: print out the hash keys and values
 
 def print_list(list)
   counter = 1
