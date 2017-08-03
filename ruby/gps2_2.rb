@@ -33,7 +33,7 @@ end
 
 # Method to remove an item from the list
 # input: item and using array as a global variable
-# steps: use delete or delete_if to remove an item from array
+# steps: use delete or delete_if to remove an item from hash
 # output: remove the item from the list.
 
 def remove_from_list (list, item)
