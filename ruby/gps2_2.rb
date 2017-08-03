@@ -21,13 +21,9 @@ def new_list(string)
   list_item
 end
 
-# def add_to_list (item, quantity = 1)
-#   list_item = {
-#     quantity: quantity,
-#     item: item
-#   }
-#   $list.push(list_item)
-# end
+def add_to_list (list, item, quantity)
+  list[item] = quantity
+end
 
 
 # Method to add an item to a list
@@ -39,9 +35,9 @@ end
 # output: array
 
 
-# def remove_from_list (item)
-#   $list.delete_if{|i| i[:item] == item}
-# end
+def remove_from_list (list, item)
+  list_item[item] = quantity
+end
 
 
 # Method to remove an item from the list
@@ -77,8 +73,8 @@ end
 #new_list("carrots apples cereal pizza")
 
 shopping_list = new_list("Onions apples")
-p shopping_list
-# add_to_list("Lemonade", 2)
+shopping_list
+add_to_list(shopping_list, "Lemonade", 2)
 # add_to_list("Tomatoes", 3)
 # add_to_list("Ice Cream", 4)
 # p $list
