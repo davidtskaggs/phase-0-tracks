@@ -58,9 +58,13 @@ end
 # output: update the quantity for the item
 
 
-# def print_list
-#   $list.each {|list_item| puts "#{list_item[:quantity]} #{list_item[:item]}"}
-# end
+def print_list(list)
+  counter = 1
+  list.each do |item, quantity|
+    puts "Item #{counter}: #{item.capitalize} - Quantity: #{quantity}"
+    counter += 1
+  end
+end
 
 # Method to print a list and make it look pretty
 # input: global array
