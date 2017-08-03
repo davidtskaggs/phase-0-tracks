@@ -22,8 +22,7 @@ end
 
 # Method to add an item to a list
 # input: list, item name, and optional quantity
-# steps: hash = { quantity: quantity,
-#item: item
+# steps: set item as key and quantity as value in hash
 #}
 #use the push method to add onto array from hash
 # output: array
