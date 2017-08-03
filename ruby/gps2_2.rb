@@ -25,7 +25,7 @@ end
 # steps: set item as key and quantity as value in hash
 #}
 #use the push method to add onto array from hash
-# output: array
+# output: hash
 
 def add_to_list (list, item, quantity)
   list[item] = quantity
@@ -37,7 +37,7 @@ end
 # output: remove the item from the list.
 
 def remove_from_list (list, item)
-  list[item] = quantity
+  list.delete(item)
 end
 
 # Method to update the quantity of an item
