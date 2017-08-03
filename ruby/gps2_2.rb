@@ -4,9 +4,9 @@
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
-  # [fill in any steps here]
-  # list[array] = string.split
-  # set default quantity = 1
+  # Take string parameter and split into array
+  # Create an empty hash
+  # Use each block to iteratate though array and add items to hash and add value of 1
   # print the list to the console [can you use one of your other methods here?]
 # output: [what data type goes here, array or hash?]
 
@@ -66,9 +66,9 @@ def print_list(list)
 end
 
 # Driver code
-shopping_list = new_list("carrots apples cereal pizza")
-add_to_list(shopping_list, "Lemonade", 2)
-add_to_list(shopping_list, "Tomatoes", 3)
-add_to_list(shopping_list, "Ice Cream", 4)
-update_quantity(shopping_list, "apples", 5)
-print_list(shopping_list)
+# shopping_list = new_list("carrots apples cereal pizza")
+# add_to_list(shopping_list, "Lemonade", 2)
+# add_to_list(shopping_list, "Tomatoes", 3)
+# add_to_list(shopping_list, "Ice Cream", 4)
+# update_quantity(shopping_list, "apples", 5)
+# print_list(shopping_list)
