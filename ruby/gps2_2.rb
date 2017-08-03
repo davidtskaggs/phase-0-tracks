@@ -41,10 +41,9 @@ def remove_from_list (list, item)
 end
 
 # Method to update the quantity of an item
-# input: item. quantity
-# steps: iterate through the array
-#specify a specific item, then specify the quantity that you want to change it to.
-# output: update the quantity for the item
+# input: list, item, quantity
+# steps: set the new quantity as the value to the item key in hash
+# output: Updated hash
 
 def update_quantity (list, item, quantity)
   list[item] = quantity
