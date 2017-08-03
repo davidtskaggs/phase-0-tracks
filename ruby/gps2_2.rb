@@ -10,7 +10,6 @@
   # print the list to the console [can you use one of your other methods here?]
 # output: [what data type goes here, array or hash?]
 
-
 def new_list(string)
   items = string.split(" ")
   list_item = {}
@@ -21,11 +20,6 @@ def new_list(string)
   list_item
 end
 
-def add_to_list (list, item, quantity)
-  list[item] = quantity
-end
-
-
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps: hash = { quantity: quantity,
@@ -34,21 +28,17 @@ end
 #use the push method to add onto array from hash
 # output: array
 
-
-def remove_from_list (list, item)
-  list_item[item] = quantity
+def add_to_list (list, item, quantity)
+  list[item] = quantity
 end
-
 
 # Method to remove an item from the list
 # input: item and using array as a global variable
 # steps: use delete or delete_if to remove an item from array
 # output: remove the item from the list.
 
-
-def update_quantity (list, item, quantity)
+def remove_from_list (list, item)
   list_item[item] = quantity
-  list_item
 end
 
 # Method to update the quantity of an item
@@ -57,6 +47,15 @@ end
 #specify a specific item, then specify the quantity that you want to change it to.
 # output: update the quantity for the item
 
+def update_quantity (list, item, quantity)
+  list_item[item] = quantity
+  list_item
+end
+
+# Method to print a list and make it look pretty
+# input: global array
+# steps: iterate through the array using an each metohd
+# output: print out the hash specify the quantity and item and keys and values
 
 def print_list(list)
   counter = 1
@@ -66,26 +65,9 @@ def print_list(list)
   end
 end
 
-# Method to print a list and make it look pretty
-# input: global array
-# steps: iterate through the array using an each metohd
-# output: print out the hash specify the quantity and item and keys and values
-
-#new_list("carrots apples cereal pizza")
-
-shopping_list = new_list("Onions apples")
-shopping_list
-add_to_list(shopping_list, "Lemonade", 2)
-# add_to_list("Tomatoes", 3)
-# add_to_list("Ice Cream", 4)
-# p $list
-# puts $list.length
-# remove_from_list("Lemonade")
-# puts $list.length
-
-# add_to_list("apples", 15)
-# print_list
-# add_to_list("carrots", 12)
-# update_quantity(1, "Ice Cream")
-# puts
+# shopping_list new_list("carrots apples cereal pizza")
+# add_to_list(shopping_list, "Lemonade", 2)
+# add_to_list(shopping_list, "Tomatoes", 3)
+# add_to_list(shopping_list, "Ice Cream", 4)
+# update_quantity(shopping_list, "apples", 5)
 # print_list
