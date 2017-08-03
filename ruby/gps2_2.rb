@@ -38,7 +38,7 @@ end
 # output: remove the item from the list.
 
 def remove_from_list (list, item)
-  list_item[item] = quantity
+  list[item] = quantity
 end
 
 # Method to update the quantity of an item
@@ -48,8 +48,8 @@ end
 # output: update the quantity for the item
 
 def update_quantity (list, item, quantity)
-  list_item[item] = quantity
-  list_item
+  list[item] = quantity
+  list
 end
 
 # Method to print a list and make it look pretty
@@ -59,15 +59,16 @@ end
 
 def print_list(list)
   counter = 1
-  list.each do |item, quantity|
+  list.each do|item, quantity|
     puts "Item #{counter}: #{item.capitalize} - Quantity: #{quantity}"
     counter += 1
   end
 end
 
-# shopping_list new_list("carrots apples cereal pizza")
-# add_to_list(shopping_list, "Lemonade", 2)
-# add_to_list(shopping_list, "Tomatoes", 3)
-# add_to_list(shopping_list, "Ice Cream", 4)
-# update_quantity(shopping_list, "apples", 5)
-# print_list
+# Driver code
+shopping_list = new_list("carrots apples cereal pizza")
+add_to_list(shopping_list, "Lemonade", 2)
+add_to_list(shopping_list, "Tomatoes", 3)
+add_to_list(shopping_list, "Ice Cream", 4)
+update_quantity(shopping_list, "apples", 5)
+print_list(shopping_list)
