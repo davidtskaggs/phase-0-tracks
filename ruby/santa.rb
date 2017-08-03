@@ -20,7 +20,7 @@
 
 # Release 2: Change an Attribute with a Method
 
-class Santa
+class Santas
   attr_accessor :gender
   attr_reader :age, :ethnicity
   def initialize(gender, ethnicity)
@@ -28,7 +28,6 @@ class Santa
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = age
-    "initializing Santa instance..."
   end
 
   def speak
@@ -52,8 +51,9 @@ class Santa
   end
 end
 
-santas = []
-number_of_atendees = []
+santas_list = []
+cookie_type_arr = ["chocolate-chip", "snickerdoodle", "biscotti", "sugar", "peanut butter", "triple-chocolate-chunk", "vegan cookie"]
+cookie_type_arr = ["chocolate-chip", "snickerdoodle", "biscotti", "sugar", "peanut butter", "triple-chocolate-chunk", "vegan cookie"]
 genders = ["neutral", "agender", "female", "bigender", "male", "gender fluid", "N/A", "non-binary", "N/A", "prefer not to say", "man", "woman"]
 ethnicities = ["black", "Arab", "Latino", "white", "Japanese-African", "prefer not to say", "Native American", "N/A", "Spanish colonial crusader", "North African", "Nordic", "indiginious Canadian", "new yorker", "meditterrean", "jewish", ""]
 
@@ -67,12 +67,25 @@ def santa_maker(num_of_santas, gender_arr, ethnicity_arr, santa_arr)
   i = 0
   loop do
     break if i == num_of_santas
-    santa_arr << santa = Santa.new(gender_arr.sample, ethnicity_arr.sample)
+    santa_arr << santa = Santas.new(gender_arr.sample, ethnicity_arr.sample)
     i += 1
   end
-  santa_arr
 end
 
+def print_santas(santas, cookie_types)
+  santas.each do |santa|
+    puts
+    puts "New Santa..."
+    puts "Santa Age: #{santa.age}"
+    puts "This Santa is #{santa.gender} & is of #{santa.ethnicity} ethnicity!"
+    puts "#{santa.speak}"
+    puts "It's Santa's birthday, Santa is now: #{santa.celebrate_birthday} years old!!!"
+    puts "#{santa.eat_milk_and_cookies(cookie_types.sample)}"
+    "#{santa.get_mad_at("Dasher")}"
+  end
+end
+
+# Driver Code -----------------------------------------------
 # new_santa = Santa.new("male", "white")
 # another_santa = Santa.new("female", "Latino")
 # next_santa = Santa.new("non-binary", "Prefer not to say")
@@ -86,4 +99,5 @@ end
 # lil_santa.celebrate_birthday
 # p lil_santa.age
 # p lil_santa.celebrate_birthday
-# santa_maker(rand(100), genders, ethnicities, santas)
+# santa_maker(rand(100), genders, ethnicities, santas_list)
+# print_santas(santas_list, cookie_type_arr)
