@@ -46,13 +46,10 @@ end
 # output: remove the item from the list.
 
 
-# def update_quantity (quantity, item)
-#   $list.each do |list_item|
-#     if list_item[:item] == item
-#       list_item[:quantity] = quantity
-#     end
-#   end
-# end
+def update_quantity (list, item, quantity)
+  list_item[item] = quantity
+  list_item
+end
 
 # Method to update the quantity of an item
 # input: item. quantity
