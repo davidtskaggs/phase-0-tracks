@@ -88,7 +88,7 @@ puts "----------------------------"
 
 require 'io/console'
 puts "Player 1: Please enter a word: "
-player_1_word = STDIN.noecho(&:gets).chomp
+player_1_word = STDIN.noecho(&:gets).chomp.downcase
 
 new_game = HangMan.new(player_1_word)
 new_game.display_word_dash_str
@@ -101,7 +101,7 @@ puts "-----------------------------------"
 
 loop do
   puts "Guess a letter:"
-  individual_letter_guess = gets.chomp
+  individual_letter_guess = gets.chomp.downcase
   new_game.add_guess_input(individual_letter_guess)
   new_game.letter_guesses(individual_letter_guess)
   break if new_game.is_game_over == true
