@@ -56,6 +56,7 @@ class HangMan
       end
       puts "----------------------------------"
       puts "Remaning Guesses: #{@hangman_word.length - guess_count}"
+      puts  "Guessed Letters: #{@guessed_letters.join("-")}"
       puts "'#{@word_dash_str}'"
       puts "----------------------------------"
   end
@@ -67,6 +68,16 @@ class HangMan
     elsif @guess_count == @hangman_word.length
       puts "PLAYER 1 WINS!"
       @game_over = true
+    end
+  end
+
+  def add_guess_input(letter)
+    if !@guessed_letters.include?(letter)
+      @guessed_letters << letter
+    else
+      puts "----------------------------------"
+      puts "Letter Already Guessed! Try again!"
+      @guess_count -= 1
     end
   end
 end
@@ -95,6 +106,7 @@ puts "-----------------------------------"
 loop do
   puts "Guess a letter:"
   individual_letter_guess = gets.chomp
+  new_game.add_guess_input(individual_letter_guess)
   new_game.letter_guesses(individual_letter_guess)
   break if new_game.is_game_over == true
 end
