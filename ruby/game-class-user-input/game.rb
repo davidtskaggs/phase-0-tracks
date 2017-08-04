@@ -32,19 +32,29 @@ PSEUDOCODE:
 
 # Business Logic
 class HangMan
-  attr_accessor :guess_count, :guessed_letters
-  attr_reader :game_over, :word_dash_str
+  attr_accessor :guess_count, :guessed_letters, :hangman_word, :word_dash_str
+  attr_reader :game_over
 
-  def initialize(hangman_word)
+  def initialize
     @hangman_word = hangman_word
-    @word_dash_str = "-" * hangman_word.length
     @game_over = false
     @guess_count = 0
     @guessed_letters = []
   end
 
+  def welcome
+    "Welcome to the Hangman game!"
+  end
+
+  def user_1_input(input)
+    @hangman_word = input
+  end
+
   def display_word_dash_str
-    @word_dash_str
+    @word_dash_str = "-" * @hangman_word.length
+    # @hangman_word.split("")
+    # @word_dash_str = "-" * @hangman_word.length
+    # @word_dash_str
   end
 
   def letter_guesses(letter)
@@ -87,10 +97,11 @@ puts "Welcome to the Hangman game!"
 puts "----------------------------"
 
 require 'io/console'
+new_game = HangMan.new
 puts "Player 1: Please enter a word: "
 player_1_word = STDIN.noecho(&:gets).chomp.downcase
 
-new_game = HangMan.new(player_1_word)
+new_game.user_1_input(player_1_word)
 new_game.display_word_dash_str
 
 puts "-----------------------------------"
@@ -100,7 +111,7 @@ puts "'#{new_game.display_word_dash_str}'"
 puts "-----------------------------------"
 
 loop do
-  puts "Guess a letter:"
+   puts "Guess a letter:"
   individual_letter_guess = gets.chomp.downcase
   new_game.add_guess_input(individual_letter_guess)
   new_game.letter_guesses(individual_letter_guess)
