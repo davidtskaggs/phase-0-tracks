@@ -52,9 +52,6 @@ class HangMan
 
   def display_word_dash_str
     @word_dash_str = "-" * @hangman_word.length
-    # @hangman_word.split("")
-    # @word_dash_str = "-" * @hangman_word.length
-    # @word_dash_str
   end
 
   def letter_guesses(letter)
