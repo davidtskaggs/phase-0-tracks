@@ -94,8 +94,6 @@ class HangMan
   end
 end
 
-
-
 # User Interface
 puts "Welcome to the Hangman game!"
 puts "----------------------------"
