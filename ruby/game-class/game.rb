@@ -53,11 +53,11 @@ class HangMan
 
   def letter_guesses(letter)
     if @guessed_letters.include?(letter)
-      puts "Letter Already Guessed! Try again!"
-      puts "Remaning Guesses: #{@hangman_word.length - (guess_count + 1)}"
-      puts  "Guessed Letters: #{@guessed_letters.join("-")}"
-      puts "'#{@word_dash_str}'"
-      puts "----------------------------------"
+      "Letter Already Guessed! Try again!"
+      "Remaning Guesses: #{@hangman_word.length - (guess_count + 1)}"
+      "Guessed Letters: #{@guessed_letters.join("-")}"
+      "'#{@word_dash_str}'"
+      "----------------------------------"
     else
       @guessed_letters << letter
       @hangman_word.split("").each_with_index do |hangman_word_split,index|
