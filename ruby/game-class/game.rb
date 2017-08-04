@@ -88,17 +88,16 @@ class HangMan
 end
 
 # User Interface
+# new_game = HangMan.new("abcd")
+# new_game.welcome
+# new_game.display_word_dash_str
+# puts "'#{new_game.display_word_dash_str}'"
+# puts "Total Guesses: #{new_game.word_dash_str.length}"
 
-new_game = HangMan.new("abcd")
-new_game.welcome
-new_game.display_word_dash_str
-puts "'#{new_game.display_word_dash_str}'"
-puts "Total Guesses: #{new_game.word_dash_str.length}"
-
-new_game.letter_guesses("a")
-new_game.letter_guesses("b")
-new_game.letter_guesses("c")
+# new_game.letter_guesses("a")
+# new_game.letter_guesses("b")
+# new_game.letter_guesses("c")
 # new_game.letter_guesses("")
-new_game.letter_guesses("a")
-new_game.letter_guesses("d")
-new_game.is_game_over
+# new_game.letter_guesses("a")
+# new_game.letter_guesses("d")
+# new_game.is_game_over
