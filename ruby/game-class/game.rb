@@ -83,10 +83,8 @@ class HangMan
 end
 
 # User Interface
-
-# loop do
-  puts "Welcome to the Hangman game!"
-  puts "----------------------------"
+puts "Welcome to the Hangman game!"
+puts "----------------------------"
 
 require 'io/console'
 puts "Player 1: Please enter a word: "
