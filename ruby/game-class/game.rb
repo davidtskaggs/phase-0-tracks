@@ -52,9 +52,6 @@ class HangMan
 
   def display_word_dash_str
     @word_dash_str = "-" * @hangman_word.length
-    # @hangman_word.split("")
-    # @word_dash_str = "-" * @hangman_word.length
-    # @word_dash_str
   end
 
   def letter_guesses(letter)
@@ -71,6 +68,21 @@ class HangMan
       puts "----------------------------------"
   end
 
+  def add_guess_input(letter)
+    if letter.length > 1
+      puts "INVALID INPUT: Enter 1 letter at a time!"
+      @guess_count -= 1
+    end
+    if !@guessed_letters.include?(letter)
+      @guessed_letters << letter
+    elsif letter.length > 1
+    else
+      puts "----------------------------------"
+      puts "Letter Already Guessed! Try again!"
+      @guess_count -= 1
+    end
+  end
+
   def is_game_over
     if @word_dash_str == @hangman_word && @guess_count <= @hangman_word.length
       puts "PLAYER 2 WINS!"
@@ -78,16 +90,6 @@ class HangMan
     elsif @guess_count == @hangman_word.length
       puts "PLAYER 1 WINS!"
       @game_over = true
-    end
-  end
-
-  def add_guess_input(letter)
-    if !@guessed_letters.include?(letter)
-      @guessed_letters << letter
-    else
-      puts "----------------------------------"
-      puts "Letter Already Guessed! Try again!"
-      @guess_count -= 1
     end
   end
 end
