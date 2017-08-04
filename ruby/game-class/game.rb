@@ -32,11 +32,14 @@ PSEUDOCODE:
 
 # Business Logic
 class HangMan
-  attr_accessor :word_dash_str
+  attr_accessor :guess_count
+  attr_reader :game_over, :word_dash_str
 
   def initialize(hangman_word)
     @hangman_word = hangman_word
     @word_dash_str = "-" * hangman_word.length
+    @game_over = false
+    @guess_count = 1
   end
 
   def display_word_dash_str
@@ -44,6 +47,7 @@ class HangMan
   end
 
   def letter_guesses(letter)
+    @guess_count += 1
     @hangman_word.split("").each_with_index do |hangman_word_split,index|
       if letter == hangman_word_split
         @word_dash_str[index] = letter
@@ -51,11 +55,21 @@ class HangMan
     end
     puts @word_dash_str
   end
+
+  def is_game_over
+    if @word_dash_str == @hangman_word && @guess_count <= @hangman_word.length
+      puts "Player 2: You Win!"
+      @game_over = true
+    elsif @guess_count == @hangman_word.length
+      puts "Player 1 Wins!"
+      @game_over = true
+    end
+  end
 end
 
 # User Interface
 
-loop do
+# loop do
   puts "Welcome to the Hangman game!"
   puts "-------------------------------------------------"
   puts "RULES:"
@@ -68,19 +82,14 @@ loop do
   puts "- We will provide the length of the hangman word (EX: '-----')"
   puts "- You will have the exact amount of guesses as the length of the word"
   puts "- If a correct letter is guessed, we will update the Hangman to reflect the progress"
-  puts
   puts "-------------------------------------------------"
   puts "HOW TO WIN..."
   puts
   puts "-If Player 2 guesses the word before they run out of guesses, then Player 2 wins! "
   puts "-Otherwise, Player 1 wins!"
-  puts
   puts "-------------------------------------------------"
   puts "Ready to get started? (enter 'start' to continue)"
   puts "-------------------------------------------------"
-  start_game = gets.chomp
-  break if start_game == "start"
-end
 
 require 'io/console'
 puts "Player 1: Please enter a word: "
@@ -97,11 +106,9 @@ puts
 p new_game.display_word_dash_str
 puts "-----------------------------------"
 
-guess_count = 1
 loop do
   puts "Guess a letter:"
   individual_letter_guess = gets.chomp
   new_game.letter_guesses(individual_letter_guess)
-  break if guess_count == player_1_word.length
-  guess_count += 1
+  break if new_game.is_game_over == true
 end
