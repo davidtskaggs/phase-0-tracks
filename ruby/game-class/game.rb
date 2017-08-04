@@ -98,7 +98,7 @@ puts "Total Guesses: #{new_game.word_dash_str.length}"
 new_game.letter_guesses("a")
 new_game.letter_guesses("b")
 new_game.letter_guesses("c")
-# new_game.letter_guesses("")
+new_game.letter_guesses("")
 new_game.letter_guesses("a")
 new_game.letter_guesses("d")
 new_game.is_game_over
