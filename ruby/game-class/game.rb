@@ -93,6 +93,7 @@ class HangMan
 end
 
 # User Interface
+
 puts "Welcome to the Hangman game!"
 puts "----------------------------"
 
@@ -117,3 +118,4 @@ loop do
   new_game.letter_guesses(individual_letter_guess)
   break if new_game.is_game_over == true
 end
+
