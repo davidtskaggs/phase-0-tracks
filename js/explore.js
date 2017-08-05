@@ -9,6 +9,8 @@
   // - add each letter to the return variable in reverse order
 // return the reversed string
 
+
+// Function using Arrays and converting back to strings
 function reverse_str(str) {
 
 }
