@@ -9,8 +9,10 @@
   // - add each letter to the return variable in reverse order
 // return the reversed string
 
+// Function that iterates through str and adds each item (reverse order) to a new string.
 
-// Function using Arrays and converting back to strings
+
+// Function that converts string argument into array; Iterates through array, adding each value (reverse order) to the back of the new array; Reversed Array is then set equal to a string with join and returned.
 function reverseStr(str) {
   strArr = str.split("");
   revArr = [];
