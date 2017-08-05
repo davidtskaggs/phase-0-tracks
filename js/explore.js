@@ -12,5 +12,9 @@
 
 // Function using Arrays and converting back to strings
 function reverse_str(str) {
-
+  str_arr = str.split("");
+  rev_arr = [];
+  for(var i=str_arr.length-1; i >=0; i--) {
+    rev_arr.push(str_arr[i]);
+  }
 }
