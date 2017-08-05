@@ -20,4 +20,5 @@ function reverseStr(str) {
   revStr = revArr.join("");
   return revStr;
 }
-reverseStr("hello")
+reversedString = reverseStr("hello")
+console.log(reversedString)
