@@ -27,13 +27,17 @@ reverseStr("helloworld")
 
 // Function that converts string argument into array; Iterates through array, adding each value (reverse order) to the back of the new array; Reversed Array is then set equal to a string with join and returned.
 function reverseStrUsingArr(str) {
+  var palindrome = false;
   var strArr = str.split("");
   var revArr = [];
   for(var i=strArr.length-1; i >=0; i--) {
     revArr.push(strArr[i]);
   }
   var revStr = revArr.join("");
-  console.log(str === revStr);
-  return revStr;
+  if(str === revStr) {
+    palindrome = true;
+    return palindrome;
+  }
+  return palindrome;
 }
 reverseStrUsingArr("racecar")
