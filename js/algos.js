@@ -12,3 +12,24 @@ function randomWordGen(int) {
 }
 var randomNumGen = randomWordGen(10)
 console.log(randomNumGen)
+
+function randomLetter(arr_of_letters, arr_of_nums) {
+  var return_arr = []
+  var x = ""
+  for(i = arr_of_nums.length-1; i >= 0; i--) {
+
+    for(var a=arr_of_nums[i]; a >=0; a--) {
+      if (a !== 0) {
+        x += arr_of_letters[Math.floor(Math.random() * arr_of_letters.length)]
+      } else {
+        x += ","
+      }
+
+    }
+  }
+  return_arr = x.slice(0, -1).split(",")
+  console.log(return_arr)
+  return return_arr
+
+}
+randomLetter(alphabet, randomNumGen)
