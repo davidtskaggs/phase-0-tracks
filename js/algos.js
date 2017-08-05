@@ -24,7 +24,6 @@ function randomLetter(arr_of_letters, arr_of_nums) {
       } else {
         x += ","
       }
-
     }
   }
   return_arr = x.slice(0, -1).split(",")
