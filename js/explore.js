@@ -11,7 +11,7 @@
 
 // Function that iterates through str and adds each item (reverse order) to a new string.
 function reverseStr(str) {
-  reversedStr = "";
+  var reversedStr = "";
   var isPalindrome = false;
   for(var i=str.length-1; i >= 0; i--) {
     reversedStr+= str[i];
@@ -27,12 +27,12 @@ reverseStr("helloworld")
 
 // Function that converts string argument into array; Iterates through array, adding each value (reverse order) to the back of the new array; Reversed Array is then set equal to a string with join and returned.
 function reverseStrUsingArr(str) {
-  strArr = str.split("");
-  revArr = [];
+  var strArr = str.split("");
+  var revArr = [];
   for(var i=strArr.length-1; i >=0; i--) {
     revArr.push(strArr[i]);
   }
-  revStr = revArr.join("");
+  var revStr = revArr.join("");
   console.log(str === revStr);
   return revStr;
 }
