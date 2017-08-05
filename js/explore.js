@@ -10,7 +10,15 @@
 // return the reversed string
 
 // Function that iterates through str and adds each item (reverse order) to a new string.
-
+function reverseStr(str) {
+  reversedStr = "";
+  for(var i=str.length-1; i >= 0; i--) {
+    reversedStr+= str[i];
+  }
+  console.log(reversedStr);
+  return reversedStr;
+}
+reverseStr("helloworld")
 
 // Function that converts string argument into array; Iterates through array, adding each value (reverse order) to the back of the new array; Reversed Array is then set equal to a string with join and returned.
 function reverseStrUsingArr(str) {
@@ -20,7 +28,7 @@ function reverseStrUsingArr(str) {
     revArr.push(strArr[i]);
   }
   revStr = revArr.join("");
+  console.log(revStr);
   return revStr;
 }
-reversedString = reverseStrUsingArr("hello")
-console.log(reversedString)
+reverseStrUsingArr("hello")
