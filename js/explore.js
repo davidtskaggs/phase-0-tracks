@@ -8,3 +8,7 @@
   // - iterate though the string
   // - add each letter to the return variable in reverse order
 // return the reversed string
+
+function reverse_str(str) {
+
+}
