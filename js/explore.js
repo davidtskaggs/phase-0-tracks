@@ -17,4 +17,7 @@ function reverse_str(str) {
   for(var i=str_arr.length-1; i >=0; i--) {
     rev_arr.push(str_arr[i]);
   }
+  rev_str = rev_arr.join("")
+  return rev_str;
 }
+reverse_str("hello")
