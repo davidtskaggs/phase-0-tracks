@@ -12,11 +12,16 @@
 // Function that iterates through str and adds each item (reverse order) to a new string.
 function reverseStr(str) {
   reversedStr = "";
+  var isPalindrome = false;
   for(var i=str.length-1; i >= 0; i--) {
     reversedStr+= str[i];
   }
-  console.log(reversedStr);
-  return reversedStr;
+  if(str === reversedStr) {
+    console.log(reversedStr);
+    isPalindrome = true
+    return isPalindrome;
+  }
+  return isPalindrome;
 }
 reverseStr("helloworld")
 
@@ -28,7 +33,7 @@ function reverseStrUsingArr(str) {
     revArr.push(strArr[i]);
   }
   revStr = revArr.join("");
-  console.log(revStr);
+  console.log(str === revStr);
   return revStr;
 }
-reverseStrUsingArr("hello")
+reverseStrUsingArr("racecar")
