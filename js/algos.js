@@ -1,34 +1,70 @@
 // 7.3 Solo Challenge
 
-// Release 2: Generate Random Test Data
-alphabet = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
+// Release 0:Find the Longest Phrase
+// arrOfWords = ["long word", "longest word", "longer word"]
 
-function randomWordGen(int) {
+function findLongestWord(arr) {
+  arr.sort(function(a,b) {
+    return b.length - a.length
+  });
+  var biggestWord = arr[0];
+  console.log("Longest word:", biggestWord, "-", "Length:", biggestWord.length)
+  return biggestWord;
+}
+
+// findLongestWord(arrOfWords)
+
+// Release 1: Find Key/Value Match
+
+function compareObjs(obj1, obj2) {
+  var sameValInObj = false
+  for(var key in obj1) {
+    for(var secondKey in obj2) {
+      if (obj1[key] === obj2[secondKey]) {
+        sameValInObj = true
+      }
+    }
+  }
+  return sameValInObj;
+
+}
+// compareObjs({name: "Steven", age: 54}, {name: "Tamir", age: 54})
+// compareObjs({animal: "cat", legs: 4}, {animal: "Dog", legs: 3});
+
+
+// Release 2: Generate Random Test Data
+function alphabetFunc() {
+alphabetArray = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
+return alphabetArray;
+}
+var alphabet = alphabetFunc();
+
+function randomIntGen(int) {
   var numArr = []
   for(var i=int; i>0; i--) {
-    numArr.push(Math.floor(Math.random() * (20 - 2) + 2));
+    numArr.push(Math.floor(Math.random() * (11 - 3) + 3));
   }
   return numArr;
 }
-var randomNumGen = randomWordGen(10)
-console.log(randomNumGen)
+var randomNumGen = randomIntGen(5)
 
-function randomLetter(arr_of_letters, arr_of_nums) {
+function randomLetterGen(arr_of_nums, alphabetFunc) {
   var return_arr = []
   var x = ""
   for(i = arr_of_nums.length-1; i >= 0; i--) {
 
     for(var a=arr_of_nums[i]; a >=0; a--) {
       if (a !== 0) {
-        x += arr_of_letters[Math.floor(Math.random() * arr_of_letters.length)]
+        x += alphabet[Math.floor(Math.random() * alphabet.length)]
       } else {
         x += ","
       }
     }
   }
   return_arr = x.slice(0, -1).split(",")
-  console.log(return_arr)
-  return return_arr
+  console.log("Array of", return_arr.length, "random words:", return_arr);
+  return return_arr;
 
 }
-randomLetter(alphabet, randomNumGen)
+var wordGen = randomLetterGen(randomNumGen, alphabet)
+findLongestWord(wordGen)
