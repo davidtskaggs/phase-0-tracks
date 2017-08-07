@@ -23,14 +23,15 @@ function createHorseObj(arr1, arr2) {
   return horseObj;
 }
 
-createHorseObj(horseNames, colors)
+createHorseObj(horseNames, colors);
 
 // Release 2: Build Many Objects Using a Constructor
+
 function carMaker(make, model, isSafe) {
 
   this.make = make;
   this.model = model;
-  this.isSafe = isSafe
+  this.isSafe = isSafe;
   this.testDrive = function() { console.log("VRRROOOM!!"); };
 }
 
@@ -41,7 +42,7 @@ console.log("Another car made!");
 newCar.testDrive();
 console.log("----");
 
-console.log("Let's make a new car...")
+console.log("Let's make a new car...");
 var anotherCar = new carMaker("ford", "fiesta", false);
 console.log(anotherCar);
 console.log("Another car made!");
