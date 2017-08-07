@@ -32,19 +32,23 @@ function compareObjs(obj1, obj2) {
 
 
 // Release 2: Generate Random Test Data
-alphabet = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
+function alphabetFunc() {
+alphabetArray = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
+return alphabetArray;
+}
+var alphabet = alphabetFunc();
 
 function randomWordGen(int) {
   var numArr = []
   for(var i=int; i>0; i--) {
-    numArr.push(Math.floor(Math.random() * (20 - 2) + 2));
+    numArr.push(Math.floor(Math.random() * (11 - 3) + 3));
   }
   return numArr;
 }
-var randomNumGen = randomWordGen(10)
+var randomNumGen = randomWordGen(5)
 console.log(randomNumGen)
 
-function randomLetter(arr_of_letters, arr_of_nums) {
+function randomLetter(arr_of_letters, arr_of_nums, alphabetFunc) {
   var return_arr = []
   var x = ""
   for(i = arr_of_nums.length-1; i >= 0; i--) {
@@ -62,4 +66,4 @@ function randomLetter(arr_of_letters, arr_of_nums) {
   return return_arr
 
 }
-// randomLetter(alphabet, randomNumGen)
+randomLetter(alphabet, randomNumGen, alphabet)
