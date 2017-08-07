@@ -11,7 +11,7 @@ function findLongestWord(arr) {
   return biggestWord;
 }
 
-findLongestWord(arrOfWords)
+// dfindLongestWord(arrOfWords)
 
 // Release 1: Find Key/Value Match
 
@@ -28,7 +28,7 @@ function compareObjs(obj1, obj2) {
 
 }
 // compareObjs({name: "Steven", age: 54}, {name: "Tamir", age: 54})
-// compareObjs({animal: "og", legs: 4}, {animal: "Dog", legs: 3});
+// compareObjs({animal: "cat", legs: 4}, {animal: "Dog", legs: 3});
 
 
 // Release 2: Generate Random Test Data
@@ -62,4 +62,4 @@ function randomLetter(arr_of_letters, arr_of_nums) {
   return return_arr
 
 }
-randomLetter(alphabet, randomNumGen)
+// randomLetter(alphabet, randomNumGen)
