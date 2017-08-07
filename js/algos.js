@@ -13,6 +13,24 @@ function findLongestWord(arr) {
 
 findLongestWord(arrOfWords)
 
+// Release 1: Find Key/Value Match
+
+function compareObjs(obj1, obj2) {
+  var sameValInObj = false
+  for(var key in obj1) {
+    for(var secondKey in obj2) {
+      if (obj1[key] === obj2[secondKey]) {
+        sameValInObj = true
+      }
+    }
+  }
+  return sameValInObj;
+
+}
+// compareObjs({name: "Steven", age: 54}, {name: "Tamir", age: 54})
+// compareObjs({animal: "og", legs: 4}, {animal: "Dog", legs: 3});
+
+
 // Release 2: Generate Random Test Data
 alphabet = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
 
