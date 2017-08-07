@@ -11,7 +11,7 @@ function findLongestWord(arr) {
   return biggestWord;
 }
 
-// dfindLongestWord(arrOfWords)
+// findLongestWord(arrOfWords)
 
 // Release 1: Find Key/Value Match
 
