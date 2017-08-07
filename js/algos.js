@@ -1,13 +1,14 @@
 // 7.3 Solo Challenge
 
 // Release 0:Find the Longest Phrase
-arrOfWords = ["long word", "longest word", "longer word"]
+// arrOfWords = ["long word", "longest word", "longer word"]
 
 function findLongestWord(arr) {
   arr.sort(function(a,b) {
     return b.length - a.length
   });
   var biggestWord = arr[0];
+  console.log("Longest word:", biggestWord, "-", "Length:", biggestWord.length)
   return biggestWord;
 }
 
@@ -38,32 +39,32 @@ return alphabetArray;
 }
 var alphabet = alphabetFunc();
 
-function randomWordGen(int) {
+function randomIntGen(int) {
   var numArr = []
   for(var i=int; i>0; i--) {
     numArr.push(Math.floor(Math.random() * (11 - 3) + 3));
   }
   return numArr;
 }
-var randomNumGen = randomWordGen(5)
-console.log(randomNumGen)
+var randomNumGen = randomIntGen(5)
 
-function randomLetter(arr_of_letters, arr_of_nums, alphabetFunc) {
+function randomLetterGen(arr_of_nums, alphabetFunc) {
   var return_arr = []
   var x = ""
   for(i = arr_of_nums.length-1; i >= 0; i--) {
 
     for(var a=arr_of_nums[i]; a >=0; a--) {
       if (a !== 0) {
-        x += arr_of_letters[Math.floor(Math.random() * arr_of_letters.length)]
+        x += alphabet[Math.floor(Math.random() * alphabet.length)]
       } else {
         x += ","
       }
     }
   }
   return_arr = x.slice(0, -1).split(",")
-  console.log(return_arr)
-  return return_arr
+  console.log("Array of", return_arr.length, "random words:", return_arr);
+  return return_arr;
 
 }
-randomLetter(alphabet, randomNumGen, alphabet)
+var wordGen = randomLetterGen(randomNumGen, alphabet)
+findLongestWord(wordGen)
