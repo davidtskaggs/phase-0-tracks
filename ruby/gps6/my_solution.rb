@@ -4,8 +4,8 @@
 # We spent [1] hour on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# Require_relative differs from require  in that require needs a full path to the file it references, so that it can access any file locally; Whereas, require_relative only looks for a file in the respective current local directory.
+
 require_relative 'state_data'
 
 class VirusPredictor
