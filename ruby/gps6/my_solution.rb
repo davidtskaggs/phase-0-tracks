@@ -23,9 +23,9 @@ class VirusPredictor
   end
 
   private
+
   # Taking population and population density and predicting number of deaths
   def predicted_deaths
-    # (population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
       x = 0.4
@@ -41,12 +41,10 @@ class VirusPredictor
 
     number_of_deaths = (@population * x).floor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
 
   # Predicting speed of spread with population density from hash
   def speed_of_spread
-  # (population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
 
@@ -63,7 +61,6 @@ class VirusPredictor
     end
 
     puts " and will spread across the state in #{speed} months.\n\n"
-
   end
 end
 
@@ -77,6 +74,8 @@ STATE_DATA.each do |state, pop|
   state_name.virus_effects
 end
 
+# * OLD DRIVER CODE (replaced by #each block) *
+
 # alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 # alabama.virus_effects
 
@@ -88,7 +87,5 @@ end
 
 # alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 # alaska.virus_effects
-
-
 #=======================================================================
 # Reflection Section
