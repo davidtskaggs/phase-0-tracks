@@ -18,16 +18,8 @@ class VirusPredictor
 
   # Calls the below private methods
   def virus_effects
-    # Create variable population density
-    # population_density = @population_density
-    # state = @state
-
-    # predicted_deaths(population_density, @population, state)
-
     predicted_deaths
-    # (@population_density, @population, @state)
     speed_of_spread
-    # (@population_density, @state)
   end
 
   private
