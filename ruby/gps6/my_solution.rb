@@ -9,7 +9,7 @@
 require_relative 'state_data'
 
 class VirusPredictor
-
+  # Initialize takes data from hash and assigns to instance variables to default values
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
