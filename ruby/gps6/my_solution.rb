@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [with: Thierry Moudiki ].
+# We spent [1] hour on this challenge.
 
 # EXPLANATION OF require_relative
 #
