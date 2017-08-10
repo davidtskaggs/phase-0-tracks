@@ -89,3 +89,20 @@ end
 # alaska.virus_effects
 #=======================================================================
 # Reflection Section
+
+=begin
+1. What are the differences between the two different hash syntaxes shown in the state_data file?
+  - STATE_DATA is a hash that is using it's keys as strings and it's      values as additional hashes. Inside the value hashes, the keys are listed as symbols and the values are integers. From my understanding, symbols can sometimes be more efficient because they use less memory and thus make the program more efficient.
+
+2. What does require_relative do? How is it different from require?
+  - require_relative tells a file to look for another file within the same directory to load data; Whereas, require is able to look beyond a directory to load information from a local file.
+
+3. What are some ways to iterate through a hash?
+  - Iterating through hashes can be done through a number of different blocks. My favorite ways to iterate through a hash is to use #each or #map.
+
+4. When refactoring virus_effects, what stood out to you about the variables, if anything?
+  - When refactoring virus_effects, the redundant use of instance variables being passed as arguments to predicted_deaths and speed_of_spread stood out to me the most; Removing the arguments being passed and the parameter requirements from redicted_deaths and speed_of_spread proved that they were not needed for the program to run. Removing them probably helped increase efficiency of the run-time of the program.
+
+5. What concept did you most solidify in this challenge?
+  - The concept that was most solidified during this challenge was how to approach and execute iteration of a nested hash. Furthermore, I gained a better understanding of how to iterate through a hash that has mixed keys of string and symbols.
+=end
