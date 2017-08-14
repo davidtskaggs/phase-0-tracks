@@ -46,7 +46,7 @@ function randomIntGen(int) {
   }
   return numArr;
 }
-var randomNumGen = randomIntGen(5)
+var randomNumGen = randomIntGen((Math.floor(Math.random() * (10 - 1) + 1)))
 
 function randomLetterGen(arr_of_nums, alphabetFunc) {
   var return_arr = []
@@ -66,5 +66,29 @@ function randomLetterGen(arr_of_nums, alphabetFunc) {
   return return_arr;
 
 }
-var wordGen = randomLetterGen(randomNumGen, alphabet)
-findLongestWord(wordGen)
+
+// Release 2: Question 2 
+// For this question, I am unclear based on the directions if the driver code below is sufficient;
+// Or if the the method calls should be stored in a variable and then passed as an arguement to a method. 
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+console.log("----------")
+findLongestWord(randomLetterGen(randomNumGen, alphabet))
+
+
+ 
