@@ -1,5 +1,6 @@
 # 8.1: Intro to Databases
 =begin
+
 List of SQL Commands:
 - To run SQL in the console: sqlite3 <file_name.db>
 - List available commands: .help
@@ -16,9 +17,6 @@ List of SQL Commands:
   attr_name DATATYPE
 );
 - Delete row in table: DELETE FROM <table name> WHERE <col name> = <value>;
-
-
-
-
+- Delete a table: DROP TABLE <table name>;
 
 =end
