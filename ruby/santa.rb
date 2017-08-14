@@ -53,7 +53,6 @@ end
 
 santas_list = []
 cookie_type_arr = ["chocolate-chip", "snickerdoodle", "biscotti", "sugar", "peanut butter", "triple-chocolate-chunk", "vegan cookie"]
-cookie_type_arr = ["chocolate-chip", "snickerdoodle", "biscotti", "sugar", "peanut butter", "triple-chocolate-chunk", "vegan cookie"]
 genders = ["neutral", "agender", "female", "bigender", "male", "gender fluid", "N/A", "non-binary", "N/A", "prefer not to say", "man", "woman"]
 ethnicities = ["black", "Arab", "Latino", "white", "Japanese-African", "prefer not to say", "Native American", "N/A", "Spanish colonial crusader", "North African", "Nordic", "indiginious Canadian", "new yorker", "meditterrean", "jewish", ""]
 
