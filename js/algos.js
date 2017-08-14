@@ -89,6 +89,3 @@ console.log("----------")
 findLongestWord(randomLetterGen(randomNumGen, alphabet))
 console.log("----------")
 findLongestWord(randomLetterGen(randomNumGen, alphabet))
-
-
- 
