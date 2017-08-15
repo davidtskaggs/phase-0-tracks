@@ -1,0 +1,48 @@
+BUSINESSES:
+id INTEGER PRIMARY KEY,
+name VARCHAR(255)
+
+users
+id INTEGER PRIMARY KEY,
+first_name VARCHAR(255),
+last_name VARCHAR(255)
+
+reviews
+id INTEGER PRIMARY KEY,
+stars INT,
+comment VARCHAR(255),
+business_id INT,
+user_id INT,
+FOREIGN KEY(business_id) REFERENCES businesses(id),
+FOREIGN KEY(user_id) REFERENCES users(id)
+
+1. SELECT reviews.comment, businesses.name, users.first_name FROM reviews JOIN businesses ON businesses.id = reviews.business_id JOIN users ON users.id = reviews.user_id;
+comment       name        first_name
+------------  ----------  ----------
+Pretty good!  Lotus Yoga  Bradford
+Terrible!     Grundy Hol  Mandy
+Great         Amir's Tow  Steven
+Decent        The Beagle  Angela
+
+2. SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name FROM reviews JOIN businesses ON businesses.id = reviews.business_id JOIN users ON users.id = reviews.user_id;
+ stars       comment       name        first_name  last_name
+----------  ------------  ----------  ----------  ----------
+3           Pretty good!  Lotus Yoga  Bradford    Pitt
+1           Terrible!     Grundy Hol  Mandy       Kaling
+5           Great         Amir's Tow  Steven      Wonder
+4           Decent        The Beagle  Angela      Jolie
+
+3. SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name FROM reviews JOIN businesses ON businesses.id = reviews.business_id JOIN users ON users.id = reviews.user_id WHERE reviews.stars = 5;
+stars       comment     name           first_name  last_name
+----------  ----------  -------------  ----------  ----------
+5           Great       Amir's Towing  Steven      Wonder
+
+4. SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name FROM reviews JOIN businesses ON businesses.id = reviews.business_id JOIN users ON users.id = reviews.user_id WHERE reviews.business_id = 1;
+stars       comment     name                          first_name  last_name
+----------  ----------  ----------------------------  ----------  ----------
+1           Terrible!   Grundy Hollow Wedding Chapel  Mandy       Kaling
+
+5. SELECT reviews.stars, reviews.comment, businesses.name, users.first_name, users.last_name FROM reviews JOIN businesses ON businesses.id = reviews.business_id JOIN users ON users.id = reviews.user_id WHERE businesses.name = "Lotus Yoga";
+stars       comment       name        first_name  last_name
+----------  ------------  ----------  ----------  ----------
+3           Pretty good!  Lotus Yoga  Bradford    Pitt
