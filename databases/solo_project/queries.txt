@@ -1,0 +1,105 @@
+Release 2:
+1. SELECT * FROM trump_property;                                           Id          property_name  location_id  year_opened  num_of_floors
+----------  -------------  -----------  -----------  -------------
+1           Trump Tower    1            1983         58
+2           Trump Intl Ho  2            2008         64
+3           40 Wall Stree  1            1930         71
+4           Trump SoHo     1            2008         46
+5           Trump Intl Ho  3            2009         98
+6           Trump Ocean C  4            2011         70
+7           Trump Tower M  5            2017         57
+8           Trump Plaza    7            2007         40
+9           Trump Parc St  6            2009         34
+10          Trump Park Av  1            1929         32
+
+2. UPDATE world_cities SET city_name = "Panama City" WHERE city_name = "Panama City, Panama";
+SELECT * FROM world_cities;
+id          city_name
+----------  ----------
+1           NYC
+2           Las Vegas
+3           Chicago
+4           Panama Cit
+5           Manila
+6           Stamford
+7           New Rochel
+
+3. SELECT * FROM trump_property, world_cities WHERE trump_property.location_id = world_cities.id;
+Id          property_name  location_id  year_opened  num_of_floors  id          city_name
+----------  -------------  -----------  -----------  -------------  ----------  ----------
+1           Trump Tower    1            1983         58             1           NYC
+2           Trump Intl Ho  2            2008         64             2           Las Vegas
+3           40 Wall Stree  1            1930         71             1           NYC
+4           Trump SoHo     1            2008         46             1           NYC
+5           Trump Intl Ho  3            2009         98             3           Chicago
+6           Trump Ocean C  4            2011         70             4           Panama Cit
+8           Trump Plaza    7            2007         40             7           New Rochel
+9           Trump Parc St  6            2009         34             6           Stamford
+10          Trump Park Av  1            1929         32             1           NYC
+4. SELECT trump_property.property_name, world_cities.city_name FROM trump_property JOIN world_cities ON trump_property.location_id = world_cities.id;
+property_name  city_name
+-------------  ----------
+Trump Tower    NYC
+Trump Intl Ho  Las Vegas
+40 Wall Stree  NYC
+Trump SoHo     NYC
+Trump Intl Ho  Chicago
+Trump Ocean C  Panama Cit
+Trump Tower M  Manila
+Trump Plaza    New Rochel
+Trump Parc St  Stamford
+Trump Park Av  NYC
+
+5. DELETE FROM trump_property WHERE year_opened = 2017;
+sqlite> SELECT * FROM trump_property;
+Id          property_name  location_id  year_opened  num_of_floors
+----------  -------------  -----------  -----------  -------------
+1           Trump Tower    1            1983         58
+2           Trump Intl Ho  2            2008         64
+3           40 Wall Stree  1            1930         71
+4           Trump SoHo     1            2008         46
+5           Trump Intl Ho  3            2009         98
+6           Trump Ocean C  4            2011         70
+8           Trump Plaza    7            2007         40
+9           Trump Parc St  6            2009         34
+10          Trump Park Av  1            1929         32
+
+Release 3:
+1. SELECT property_name FROM trump_property INNER JOIN world_cities ON trump_property.location_id = world_cities.id;
+property_name
+-------------
+Trump Tower
+Trump Intl Ho
+40 Wall Stree
+Trump SoHo
+Trump Intl Ho
+Trump Ocean C
+Trump Plaza
+Trump Parc St
+Trump Park Av
+
+2. SELECT property_name, year_opened, num_of_floors FROM trump_property INNER JOIN world_cities ON trump_property.location_id = world_cities.id;
+property_name  year_opened  num_of_floors
+-------------  -----------  -------------
+Trump Tower    1983         58
+Trump Intl Ho  2008         64
+40 Wall Stree  1930         71
+Trump SoHo     2008         46
+Trump Intl Ho  2009         98
+Trump Ocean C  2011         70
+Trump Plaza    2007         40
+Trump Parc St  2009         34
+Trump Park Av  1929         32
+
+3. SELECT trump_property.id, trump_property.property_name, world_cities.city_name, trump_property.year_opened, trump_property.num_of_floors FROM trump_property JOIN world_cities ON trump_property.location_id = world_cities.id;
+Id          property_name  city_name   year_opened  num_of_floors
+----------  -------------  ----------  -----------  -------------
+1           Trump Tower    NYC         1983         58
+2           Trump Intl Ho  Las Vegas   2008         64
+3           40 Wall Stree  NYC         1930         71
+4           Trump SoHo     NYC         2008         46
+5           Trump Intl Ho  Chicago     2009         98
+6           Trump Ocean C  Panama Cit  2011         70
+8           Trump Plaza    New Rochel  2007         40
+9           Trump Parc St  Stamford    2009         34
+10          Trump Park Av  NYC         1929         32
