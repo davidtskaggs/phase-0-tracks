@@ -1,5 +1,5 @@
 Release 2:
-1. SELECT * FROM trump_property;                                           Id          property_name  location_id  year_opened  num_of_floors
+1. SELECT * FROM trump_property;                                                               Id          property_name  location_id  year_opened  num_of_floors
 ----------  -------------  -----------  -----------  -------------
 1           Trump Tower    1            1983         58
 2           Trump Intl Ho  2            2008         64
@@ -24,7 +24,7 @@ id          city_name
 6           Stamford
 7           New Rochel
 
-3. SELECT * FROM trump_property, world_cities WHERE trump_property.location_id = world_cities.id;
+3. SELECT * FROM trump_property JOIN world_cities ON trump_property.location_id = world_cities.id;
 Id          property_name  location_id  year_opened  num_of_floors  id          city_name
 ----------  -------------  -----------  -----------  -------------  ----------  ----------
 1           Trump Tower    1            1983         58             1           NYC
@@ -36,6 +36,7 @@ Id          property_name  location_id  year_opened  num_of_floors  id          
 8           Trump Plaza    7            2007         40             7           New Rochel
 9           Trump Parc St  6            2009         34             6           Stamford
 10          Trump Park Av  1            1929         32             1           NYC
+
 4. SELECT trump_property.property_name, world_cities.city_name FROM trump_property JOIN world_cities ON trump_property.location_id = world_cities.id;
 property_name  city_name
 -------------  ----------
@@ -103,3 +104,16 @@ Id          property_name  city_name   year_opened  num_of_floors
 8           Trump Plaza    New Rochel  2007         40
 9           Trump Parc St  Stamford    2009         34
 10          Trump Park Av  NYC         1929         32
+
+4. SELECT * FROM trump_property LEFT JOIN world_cities ON trump_property.location_id = world_cities.id;
+Id          property_name  location_id  year_opened  num_of_floors  id          city_name
+----------  -------------  -----------  -----------  -------------  ----------  ----------
+1           Trump Tower    1            1983         58             1           NYC
+2           Trump Intl Ho  2            2008         64             2           Las Vegas
+3           40 Wall Stree  1            1930         71             1           NYC
+4           Trump SoHo     1            2008         46             1           NYC
+5           Trump Intl Ho  3            2009         98             3           Chicago
+6           Trump Ocean C  4            2011         70             4           Panama Cit
+8           Trump Plaza    7            2007         40             7           New Rochel
+9           Trump Parc St  6            2009         34             6           Stamford
+10          Trump Park Av  1            1929         32             1           NYC
