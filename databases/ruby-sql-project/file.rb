@@ -1,35 +1,63 @@
 require 'sqlite3'
 require 'faker'
 
-db = SQLite3::Database.new("match.db")
+contacts = SQLite3::Database.new("dskaggs_contacts.db")
 # db.results_as_hash = true
-db.execute("CREATE TABLE IF NOT EXISTS match(id INTEGER PRIMARY KEY, name TEXT, email TEXT, address_city TEXT, profession_industry TEXT)")
 
-def create_people (db, name, email, address_city, profession_industry)
-  db.execute("INSERT INTO match (name, email, address_city, profession_industry) VALUES (?, ?, ?, ?)", [name, email, address_city, profession_industry])
-end
+create_contacts_table = <<-SQL
+  CREATE TABLE IF NOT EXISTS contacts (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255),
+    occupation VARCHAR(255),
+    association VARCHAR(255),
+    phone_number VARCHAR(255),
+    email VARCHAR(255)
 
-# 10.times do
-#   create_people(db, Faker::Name.name, Faker::Internet.email, Faker::Address.city, Faker::Job.field)
-# end
+  )
+SQL
 
-match = db.execute("SELECT * FROM match")
-# p match
+contacts.execute(create_contacts_table)
+# contacts.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('tatiana donald', 'fashionista', 'family', '203.273.4706', 'a.t.k.donald@gmail.com') ")
 
-puts "Welcome to the Work - Finder List"
-# puts "Here are out current industries served: "
-# match.each do |value|
-#   puts "#{value[4]}"
-# end
-puts "Please enter industry:"
-user_input = gets.chomp.capitalize!
+contact_list = contacts.execute("SELECT * FROM contacts")
+# puts contact_list.class
+# p contact_list
 
-match.each do |i|
-  industry = i[4]
-  if industry == user_input
-    puts "Id: #{i[0]}. Name: #{i[1]}"
-    puts "Location: #{i[3]}"
-    puts "Profession: #{i[4]}"
-    puts "------------------------"
+puts "Welcome to your contact list"
+
+def user_decision(x)
+  loop do
+
+    puts "What would you like to do? (view, add, update, remove, or exit)"
+    user_input = gets.chomp.downcase
+    break if user_input == 'exit'
+
+    if user_input == 'view'
+      puts "processing..."
+      view_contact_list(x)
+      break
+    elsif user_input == 'add'
+      break
+    elsif user_input == 'update'
+      break
+    elsif user_input == 'remove'
+      break
+    else
+      puts "Invalid response. Please try again."
+    end
   end
 end
+
+def view_contact_list(list)
+  list = list.execute("SELECT * FROM contacts")
+  list.each do |item|
+    puts "name: #{item[1]}"
+    puts "occupation: #{item[2]} - association: #{item[3]}"
+    puts "email: #{item[4]} - phone:#{item[5]}"
+    puts "-------------------"
+  end
+end
+
+user_decision(contacts)
+
+
