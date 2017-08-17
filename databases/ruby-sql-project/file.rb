@@ -37,6 +37,8 @@ def user_decision(x)
       view_contact_list(x)
       break
     elsif user_input == 'add'
+      add_contact(x)
+      puts "processing..."
       break
     elsif user_input == 'update'
       break
@@ -56,6 +58,21 @@ def view_contact_list(list)
     puts "email: #{item[4]} - phone:#{item[5]}"
     puts "-------------------"
   end
+end
+
+def add_contact(list)
+  puts "Please enter new contact name:"
+  add_name = gets.chomp.downcase
+  puts "Please enter new contact phone number:"
+  add_phone = gets.chomp.downcase
+  puts "please enter new contact email address:"
+  add_email = gets.chomp.downcase
+  puts "please enter new contact occupation:"
+  add_occupation = gets.chomp.downcase
+  puts "please enter how you know new contact:"
+  add_group = gets.chomp.downcase
+
+  list.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES (add_name, add_occupation, add_group, add_email, add_phone) ")
 end
 
 user_decision(contacts)
