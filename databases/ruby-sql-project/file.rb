@@ -36,6 +36,8 @@ def user_decision(x)
     break if user_input == 'exit'
 
     if user_input == 'view'
+      puts "processing..."
+      view_contact_list(x)
       break
     elsif user_input == 'add'
       break
@@ -46,6 +48,16 @@ def user_decision(x)
     else
       puts "Invalid response. Please try again."
     end
+  end
+end
+
+def view_contact_list(list)
+  list = list.execute("SELECT * FROM contacts")
+  list.each do |item|
+    puts "name: #{item[1]}"
+    puts "occupation: #{item[2]} - association: #{item[3]}"
+    puts "email: #{item[4]} - phone:#{item[5]}"
+    puts "-------------------"
   end
 end
 
