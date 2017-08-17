@@ -23,9 +23,6 @@ contact_list = contacts.execute("SELECT * FROM contacts")
 # puts contact_list.class
 # p contact_list
 
-
-
-
 puts "Welcome to your contact list"
 
 def user_decision(x)
