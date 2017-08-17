@@ -18,6 +18,9 @@ SQL
 
 contacts.execute(create_contacts_table)
 contacts.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('tatiana donald', 'fashionista', 'family', '203.273.4706', 'a.t.k.donald@gmail.com') ")
-# def create_people (db, name, email, address_city, profession_industry)
-#   db.execute("INSERT INTO match (name, email, address_city, profession_industry) VALUES (?, ?, ?, ?)", [name, email, address_city, profession_industry])
-# end
+
+contact_list = contacts.execute("SELECT * FROM contacts")
+# puts contact_list.class
+p contact_list
+
+
