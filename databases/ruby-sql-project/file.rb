@@ -64,35 +64,8 @@ def view_contact_list(list)
   end
 end
 
-# Refactor!!
-# def add_contact(list)
-#   contact_array = []
-#   puts "Please enter new contact name:"
-#   add_name = gets.chomp.downcase
-#   # contact_array << add_name
-#   puts "Please enter new contact phone number:"
-#   add_phone = gets.chomp.downcase
-#   # contact_array << add_phone
-#   puts "please enter new contact email address:"
-#   add_email = gets.chomp.downcase
-#   # contact_array << add_email
-#   puts "please enter new contact occupation:"
-#   add_occupation = gets.chomp.downcase
-#   # contact_array << add_occupation
-#   puts "please enter how you know new contact:"
-#   add_group = gets.chomp.downcase
-#   # contact_array << add_group
-#   # list.execute(create_contacts_table)
-#   # list = list.execute("SELECT * FROM contacts")
-#   list.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES (add_name, add_occupation, add_group, add_email, add_phone) ")
-# end
-
-# Refactor!!!
-# def update_contact(list)
-
-#   puts "Please enter contact name:"
-#   input_name = gets.chomp
-
+# REFACTOR
+# def print_individual_contact(input)
 #   list = list.execute("SELECT * FROM contacts")
 #   print_list = list.each do |item|
 #     if item.index(input_name)
@@ -104,38 +77,47 @@ end
 #       puts "-------------------"
 #     end
 #   end
-
-#   loop do
-#     puts "Please enter the category for the updated item:"
-#     puts "- Options include: name, number, email, occupation, group, or exit -"
-#     category_update = gets.chomp.downcase
-#     puts "What is the updated #{category_update}:"
-#     updated_value = gets.chomp.downcase
-
-#     if category_update == 'exit'
-#       break
-#     elsif category_update == 'name'
-#         list[1] = updated_value
-#         break
-#     elsif category_update == 'number'
-#         list[5] = updated_value
-#         break
-#     elsif category_update == 'email'
-#         list[4] = updated_value
-#         break
-#     elsif  category_update == 'occupation'
-#         list[2] = updated_value
-#         break
-#     elsif category_update == 'group'
-#         # list[3] = updated_value
-#         list[3].replace(updated_value.split)
-#         break
-#     else
-#         puts "Invalid input: try again!"
-#       end
-#   end
-#   puts "#{print_list}"
 # end
+
+# Refactor!!
+def add_contact(list)
+
+  puts "Please enter new contact name:"
+  add_name = gets.chomp.downcase
+
+  puts "Please enter new contact phone number:"
+  add_phone = gets.chomp.downcase
+
+  puts "please enter new contact email address:"
+  add_email = gets.chomp.downcase
+
+  puts "please enter new contact occupation:"
+  add_occupation = gets.chomp.downcase
+
+  puts "please enter how you know new contact:"
+  add_group = gets.chomp.downcase
+
+  list.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('#{add_name}', '#{add_occupation}','#{add_group}', '#{add_email}', '#{add_phone}') ")
+end
+
+
+def update_contact(list)
+
+  puts "Please enter contact name:"
+  input_name = gets.chomp
+  # PRINT CONTACT INFORMATION FOR 'INPUT_NAME'
+
+  puts "Please enter the category for the updated item:"
+  puts "- Options include: name, occupation, association, phone_number, email,  or exit -"
+  category_update = gets.chomp.downcase
+
+  puts "What is the updated #{category_update}:"
+  updated_value = gets.chomp.downcase
+
+  list.execute("UPDATE contacts SET '#{category_update}' = '#{updated_value}' WHERE name = '#{input_name}' ")
+
+  # PRINT UPDATED CONTACT INFORMATION FOR 'INPUT_NAME'
+end
 
 def remove(list)
   puts "Please enter contact to remove"
