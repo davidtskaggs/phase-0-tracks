@@ -65,27 +65,27 @@ def view_contact_list(list)
 end
 
 # Refactor!!
-# def add_contact(list)
-#   contact_array = []
-#   puts "Please enter new contact name:"
-#   add_name = gets.chomp.downcase
-#   # contact_array << add_name
-#   puts "Please enter new contact phone number:"
-#   add_phone = gets.chomp.downcase
-#   # contact_array << add_phone
-#   puts "please enter new contact email address:"
-#   add_email = gets.chomp.downcase
-#   # contact_array << add_email
-#   puts "please enter new contact occupation:"
-#   add_occupation = gets.chomp.downcase
-#   # contact_array << add_occupation
-#   puts "please enter how you know new contact:"
-#   add_group = gets.chomp.downcase
-#   # contact_array << add_group
-#   # list.execute(create_contacts_table)
-#   # list = list.execute("SELECT * FROM contacts")
-#   list.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES (add_name, add_occupation, add_group, add_email, add_phone) ")
-# end
+def add_contact(list)
+  contact_array = []
+  puts "Please enter new contact name:"
+  add_name = gets.chomp.downcase
+  # contact_array << add_name
+  puts "Please enter new contact phone number:"
+  add_phone = gets.chomp.downcase
+  # contact_array << add_phone
+  puts "please enter new contact email address:"
+  add_email = gets.chomp.downcase
+  # contact_array << add_email
+  puts "please enter new contact occupation:"
+  add_occupation = gets.chomp.downcase
+  # contact_array << add_occupation
+  puts "please enter how you know new contact:"
+  add_group = gets.chomp.downcase
+  # contact_array << add_group
+  # list.execute(create_contacts_table)
+  # list = list.execute("SELECT * FROM contacts")
+  list.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('#{add_name}', '#{add_occupation}','#{add_group}', '#{add_email}', '#{add_phone}') ")
+end
 
 # Refactor!!!
 # def update_contact(list)
