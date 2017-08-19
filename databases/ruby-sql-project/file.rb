@@ -28,11 +28,12 @@ puts "Welcome to your contact list"
 def user_decision(x)
   loop do
 
-    puts "What would you like to do? (view, add, update, remove, or exit)"
+    puts "What would you like to do? (view, add, update, remove, search or exit)"
     user_input = gets.chomp.downcase
-    break if user_input == 'exit'
 
-    if user_input == 'view'
+    if user_input == 'exit'
+      break
+    elsif user_input == 'view'
       puts "processing..."
       view_contact_list(x)
       break
@@ -47,6 +48,10 @@ def user_decision(x)
     elsif user_input == 'remove'
       puts "processing..."
       remove(x)
+      break
+    elsif user_input == 'search'
+      puts "processing..."
+      print_individual_contact(x)
       break
     else
       puts "Invalid response. Please try again."
@@ -65,15 +70,20 @@ def view_contact_list(list)
 end
 
 # REFACTOR
-# def print_individual_contact(input)
-#   list = list.execute("SELECT * FROM contacts")
-#   print_list = list.each do |item|
-#     if item.index(input_name)
+# def print_individual_contact(list)
+#   puts "Please enter name to search:"
+#   input_name = gets.chomp.downcase
+
+#   print_list = list.execute("SELECT * FROM contacts")
+#   print_list.each do |item|
+#     if item.index(input_name) != -1
+#       i = item.index(input_name)
 #       puts "-------------------"
 #       puts "Contact Information:"
-#       puts "name: #{item[1]}"
-#       puts "occupation: #{item[2]} - association: #{item[3]}"
-#       puts "email: #{item[4]} - phone:#{item[5]}"
+#       puts "name: #{item[i]}"
+#       # puts "name: #{item[i][1]}"
+#       # puts "occupation: #{item[i][2]} - association: #{item[i][3]}"
+#       # puts "email: #{item[i][4]} - phone:#{item[i][5]}"
 #       puts "-------------------"
 #     end
 #   end
