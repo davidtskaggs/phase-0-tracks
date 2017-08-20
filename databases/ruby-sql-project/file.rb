@@ -8,7 +8,6 @@
 - update: update a specific piece of information for an individual contact
 - search: search for an individual contact and print results
 - exit: exit program
-
 =end
 
 require 'sqlite3'
