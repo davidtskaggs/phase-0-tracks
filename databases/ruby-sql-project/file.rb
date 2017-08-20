@@ -116,7 +116,8 @@ def update_contact(list)
 
   puts "Please enter contact name:"
   input_name = gets.chomp
-  # PRINT CONTACT INFORMATION FOR 'INPUT_NAME'
+  print_list = list.execute("SELECT * FROM contacts WHERE name = '#{input_name}' ")
+  puts print_list
 
   puts "Please enter the category for the updated item:"
   puts "- Options include: name, occupation, association, phone_number, email,  or exit -"
@@ -127,7 +128,7 @@ def update_contact(list)
 
   list.execute("UPDATE contacts SET '#{category_update}' = '#{updated_value}' WHERE name = '#{input_name}' ")
 
-  # PRINT UPDATED CONTACT INFORMATION FOR 'INPUT_NAME'
+  puts "Thank you! The #{category_update} for #{input_name} has been updated!"
 end
 
 def remove(list)
