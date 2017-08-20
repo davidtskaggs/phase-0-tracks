@@ -14,7 +14,6 @@ require 'sqlite3'
 require 'faker'
 
 contacts = SQLite3::Database.new("dskaggs_contacts.db")
-# db.results_as_hash = true
 
 create_contacts_table = <<-SQL
   CREATE TABLE IF NOT EXISTS contacts (
@@ -32,8 +31,6 @@ contacts.execute(create_contacts_table)
 # contacts.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('tatiana donald', 'fashionista', 'family', '123.456.5678', 'a.d@gmail.com') ")
 
 contact_list = contacts.execute("SELECT * FROM contacts")
-# puts contact_list.class
-# p contact_list
 
 puts "Welcome to your contact list"
 
