@@ -82,25 +82,14 @@ def view_contact_list(list)
   end
 end
 
-# REFACTOR
-# def print_individual_contact(list)
-#   puts "Please enter name to search:"
-#   input_name = gets.chomp.downcase
 
-#   print_list = list.execute("SELECT * FROM contacts")
-#   print_list.each do |item|
-#     if item.index(input_name) != -1
-#       i = item.index(input_name)
-#       puts "-------------------"
-#       puts "Contact Information:"
-#       puts "name: #{item[i]}"
-#       # puts "name: #{item[i][1]}"
-#       # puts "occupation: #{item[i][2]} - association: #{item[i][3]}"
-#       # puts "email: #{item[i][4]} - phone:#{item[i][5]}"
-#       puts "-------------------"
-#     end
-#   end
-# end
+def print_individual_contact(list)
+  puts "Please enter name to search:"
+  input_name = gets.chomp.downcase
+
+  print_list = list.execute("SELECT * FROM contacts WHERE name = '#{input_name}' ")
+  puts print_list
+end
 
 # Refactor!!
 def add_contact(list)
