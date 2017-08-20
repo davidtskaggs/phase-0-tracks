@@ -91,7 +91,6 @@ def print_individual_contact(list)
   puts print_list
 end
 
-# Refactor!!
 def add_contact(list)
 
   puts "Please enter new contact name:"
