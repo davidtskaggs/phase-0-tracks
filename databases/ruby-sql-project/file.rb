@@ -1,3 +1,16 @@
+=begin
+8.5 Combining SQL and Ruby
+
+- This program is a contact list application
+- A user has the following options upon running the application: view, add, update, remove, search, or exit.
+- view: view contact list
+- add: add a new contact
+- update: update a specific piece of information for an individual contact
+- search: search for an individual contact and print results
+- exit: exit program
+
+=end
+
 require 'sqlite3'
 require 'faker'
 
@@ -17,7 +30,7 @@ create_contacts_table = <<-SQL
 SQL
 
 contacts.execute(create_contacts_table)
-# contacts.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('tatiana donald', 'fashionista', 'family', '203.273.4706', 'a.t.k.donald@gmail.com') ")
+# contacts.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('tatiana donald', 'fashionista', 'family', '123.456.5678', 'a.d@gmail.com') ")
 
 contact_list = contacts.execute("SELECT * FROM contacts")
 # puts contact_list.class
@@ -69,25 +82,14 @@ def view_contact_list(list)
   end
 end
 
-# REFACTOR
-# def print_individual_contact(list)
-#   puts "Please enter name to search:"
-#   input_name = gets.chomp.downcase
 
-#   print_list = list.execute("SELECT * FROM contacts")
-#   print_list.each do |item|
-#     if item.index(input_name) != -1
-#       i = item.index(input_name)
-#       puts "-------------------"
-#       puts "Contact Information:"
-#       puts "name: #{item[i]}"
-#       # puts "name: #{item[i][1]}"
-#       # puts "occupation: #{item[i][2]} - association: #{item[i][3]}"
-#       # puts "email: #{item[i][4]} - phone:#{item[i][5]}"
-#       puts "-------------------"
-#     end
-#   end
-# end
+def print_individual_contact(list)
+  puts "Please enter name to search:"
+  input_name = gets.chomp.downcase
+
+  print_list = list.execute("SELECT * FROM contacts WHERE name = '#{input_name}' ")
+  puts print_list
+end
 
 # Refactor!!
 def add_contact(list)
