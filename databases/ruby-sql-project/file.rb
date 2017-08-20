@@ -8,14 +8,12 @@
 - update: update a specific piece of information for an individual contact
 - search: search for an individual contact and print results
 - exit: exit program
-
 =end
 
 require 'sqlite3'
 require 'faker'
 
 contacts = SQLite3::Database.new("dskaggs_contacts.db")
-# db.results_as_hash = true
 
 create_contacts_table = <<-SQL
   CREATE TABLE IF NOT EXISTS contacts (
@@ -33,8 +31,6 @@ contacts.execute(create_contacts_table)
 # contacts.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('tatiana donald', 'fashionista', 'family', '123.456.5678', 'a.d@gmail.com') ")
 
 contact_list = contacts.execute("SELECT * FROM contacts")
-# puts contact_list.class
-# p contact_list
 
 puts "Welcome to your contact list"
 
@@ -46,34 +42,42 @@ def user_decision(x)
 
     if user_input == 'exit'
       break
+
     elsif user_input == 'view'
       puts "processing..."
       view_contact_list(x)
       break
+
     elsif user_input == 'add'
       add_contact(x)
       puts "processing..."
       break
+
     elsif user_input == 'update'
       puts "processing..."
       update_contact(x)
       break
+
     elsif user_input == 'remove'
       puts "processing..."
       remove(x)
       break
+
     elsif user_input == 'search'
       puts "processing..."
       print_individual_contact(x)
       break
+
     else
       puts "Invalid response. Please try again."
+
     end
   end
 end
 
 def view_contact_list(list)
   list = list.execute("SELECT * FROM contacts")
+
   list.each do |item|
     puts "name: #{item[1]}"
     puts "occupation: #{item[2]} - association: #{item[3]}"
@@ -81,7 +85,6 @@ def view_contact_list(list)
     puts "-------------------"
   end
 end
-
 
 def print_individual_contact(list)
   puts "Please enter name to search:"
@@ -91,7 +94,6 @@ def print_individual_contact(list)
   puts print_list
 end
 
-# Refactor!!
 def add_contact(list)
 
   puts "Please enter new contact name:"
@@ -117,7 +119,8 @@ def update_contact(list)
 
   puts "Please enter contact name:"
   input_name = gets.chomp
-  # PRINT CONTACT INFORMATION FOR 'INPUT_NAME'
+  print_list = list.execute("SELECT * FROM contacts WHERE name = '#{input_name}' ")
+  puts print_list
 
   puts "Please enter the category for the updated item:"
   puts "- Options include: name, occupation, association, phone_number, email,  or exit -"
@@ -128,7 +131,7 @@ def update_contact(list)
 
   list.execute("UPDATE contacts SET '#{category_update}' = '#{updated_value}' WHERE name = '#{input_name}' ")
 
-  # PRINT UPDATED CONTACT INFORMATION FOR 'INPUT_NAME'
+  puts "Thank you! The #{category_update} for #{input_name} has been updated!"
 end
 
 def remove(list)
@@ -136,6 +139,7 @@ def remove(list)
   input = gets.chomp
 
   contact = list.execute("SELECT * FROM contacts")
+
   contact.each do |individual_contact|
     if individual_contact[1] == input
       list.execute("DELETE FROM contacts WHERE name = '#{input}' ")
