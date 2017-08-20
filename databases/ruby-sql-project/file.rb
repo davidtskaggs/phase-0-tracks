@@ -46,34 +46,42 @@ def user_decision(x)
 
     if user_input == 'exit'
       break
+
     elsif user_input == 'view'
       puts "processing..."
       view_contact_list(x)
       break
+
     elsif user_input == 'add'
       add_contact(x)
       puts "processing..."
       break
+
     elsif user_input == 'update'
       puts "processing..."
       update_contact(x)
       break
+
     elsif user_input == 'remove'
       puts "processing..."
       remove(x)
       break
+
     elsif user_input == 'search'
       puts "processing..."
       print_individual_contact(x)
       break
+
     else
       puts "Invalid response. Please try again."
+
     end
   end
 end
 
 def view_contact_list(list)
   list = list.execute("SELECT * FROM contacts")
+
   list.each do |item|
     puts "name: #{item[1]}"
     puts "occupation: #{item[2]} - association: #{item[3]}"
@@ -81,7 +89,6 @@ def view_contact_list(list)
     puts "-------------------"
   end
 end
-
 
 def print_individual_contact(list)
   puts "Please enter name to search:"
@@ -136,6 +143,7 @@ def remove(list)
   input = gets.chomp
 
   contact = list.execute("SELECT * FROM contacts")
+
   contact.each do |individual_contact|
     if individual_contact[1] == input
       list.execute("DELETE FROM contacts WHERE name = '#{input}' ")
