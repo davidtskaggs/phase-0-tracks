@@ -1,3 +1,16 @@
+=begin
+8.5 Combining SQL and Ruby
+
+- This program is a contact list application
+- A user has the following options upon running the application: view, add, update, remove, search, or exit.
+- view: view contact list
+- add: add a new contact
+- update: update a specific piece of information for an individual contact
+- search: search for an individual contact and print results
+- exit: exit program
+
+=end
+
 require 'sqlite3'
 require 'faker'
 
@@ -17,7 +30,7 @@ create_contacts_table = <<-SQL
 SQL
 
 contacts.execute(create_contacts_table)
-# contacts.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('tatiana donald', 'fashionista', 'family', '203.273.4706', 'a.t.k.donald@gmail.com') ")
+# contacts.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('tatiana donald', 'fashionista', 'family', '123.456.5678', 'a.d@gmail.com') ")
 
 contact_list = contacts.execute("SELECT * FROM contacts")
 # puts contact_list.class
