@@ -16,3 +16,5 @@
 
 3. Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
 * It is a bad idea to run programs as the root user on a Linux for security reasons.
+* When running programs from root, critical files can accidently be deleted or you can accidently delete the whole system.
+* Also, malicious software can cause much more harm when programs are run from the root.
