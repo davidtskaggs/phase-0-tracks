@@ -3,6 +3,8 @@
 ## Release 1: Research Web Servers
 
 1. What are some of the key design philosophies of the Linux operating system?
+* Linux is an open source software, meaning that the software is free to anyone to view, download, modify, ect.
+* The open source aspect of Linux allows for producing software that anyone can test, develop, debug, and learn. Open source allows the code to develop in the hands of community rather than a company.
 
 2. In your own words, what is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?
 * A Virtual Private Server (VPS) is a virtual machine (VM) with an operating system.
@@ -13,3 +15,4 @@
 * VM's use the web server to respond to http requests.
 
 3. Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
+* It is a bad idea to run programs as the root user on a Linux for security reasons.
