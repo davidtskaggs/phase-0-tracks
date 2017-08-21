@@ -34,6 +34,7 @@ contact_list = contacts.execute("SELECT * FROM contacts")
 
 puts "Welcome to your contact list"
 
+# Method that uses loop and input from user to display, view, add, update, remove, or search, or exit contact list.
 def user_decision(x)
   loop do
 
@@ -70,11 +71,11 @@ def user_decision(x)
 
     else
       puts "Invalid response. Please try again."
-
     end
   end
 end
 
+# Method to view entire contact list 
 def view_contact_list(list)
   list = list.execute("SELECT * FROM contacts")
 
@@ -86,6 +87,7 @@ def view_contact_list(list)
   end
 end
 
+# Method to print an individual contact based on user input
 def print_individual_contact(list)
   puts "Please enter name to search:"
   input_name = gets.chomp.downcase
@@ -94,6 +96,7 @@ def print_individual_contact(list)
   puts print_list
 end
 
+# Method that adds a contact to the contact list 
 def add_contact(list)
 
   puts "Please enter new contact name:"
@@ -114,7 +117,7 @@ def add_contact(list)
   list.execute("INSERT INTO contacts(name, occupation, association, phone_number, email) VALUES ('#{add_name}', '#{add_occupation}','#{add_group}', '#{add_email}', '#{add_phone}') ")
 end
 
-
+# Method that takes user input and updates a particular value of the contact list 
 def update_contact(list)
 
   puts "Please enter contact name:"
@@ -134,6 +137,7 @@ def update_contact(list)
   puts "Thank you! The #{category_update} for #{input_name} has been updated!"
 end
 
+# Method that removes a contact from the contact list 
 def remove(list)
   puts "Please enter contact to remove"
   input = gets.chomp
