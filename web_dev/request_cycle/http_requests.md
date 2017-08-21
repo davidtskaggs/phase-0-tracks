@@ -9,4 +9,9 @@
 * 550 Permission denied
 
 2. What is the difference between a GET request and a POST request? When might each be used?
+* GET and Post are two HTTP request methods.
+* GET requests data from a specified source.
+* GET requests can be cached, remain in the browser history, and have length restrictions.
+* POST submits data to be processed to a specified resource.
+* Post requests are never cached and do not remain in the browser history, and have no restrictions on data length.
 3. Optional bonus question: What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
