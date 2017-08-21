@@ -14,4 +14,7 @@
 * GET requests can be cached, remain in the browser history, and have length restrictions.
 * POST submits data to be processed to a specified resource.
 * Post requests are never cached and do not remain in the browser history, and have no restrictions on data length.
+
 3. Optional bonus question: What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
+* A HTTP cookie is a small piece of data sent from a website and stored on a user's computer.
+* It is stored by the user's web browser while the user is browsing the internet.
