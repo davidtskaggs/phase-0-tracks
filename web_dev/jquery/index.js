@@ -9,3 +9,11 @@ $("input").focus(function() {
 $("input").blur(function() {
   $(this).css("background-color", "#ffffff")
 });
+
+$('#hide_button').click(function() {
+  $("h2").hide();
+});
+
+$('#show_button').click(function() {
+  $("h2").show();
+});
