@@ -1,0 +1,11 @@
+body {
+  background: #111;
+  color: #fff;
+  margin:0;
+  padding:40px;
+  font-family:sans-serif;
+  text-transform:uppercase;
+  position:relative;
+  font-weight:700;
+}
+
