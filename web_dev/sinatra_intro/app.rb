@@ -9,8 +9,6 @@ db.results_as_hash = true
 # add a query parameter
 # GET /
 get '/' do
-  name = params[:name]
-  # p params
   "#{params[:name]} is #{params[:age]} years old."
 end
 
@@ -45,4 +43,12 @@ end
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
+end
+
+# write a '/contact' route that displays
+# an address
+
+get '/contact' do
+  home_address = "1234 Example Lane, SunnyTown USA"
+  "Shoot us some mail: #{home_address}"
 end
