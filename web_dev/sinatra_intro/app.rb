@@ -64,3 +64,23 @@ get '/great_job' do
     "Good job!"
   end
 end
+
+# write route to calculate two numbers
+get '/:number_1/:operator/:number_2' do
+  number_1 = params[:number_1]
+  number_2 = params[:number_2]
+  operator = params[:operator]
+
+  if operator == 'plus'
+    total = number_1.to_i + number_2.to_i
+  elsif operator == 'minus'
+    total = number_1.to_i - number_2.to_i
+  elsif operator == 'times'
+    total = number_1.to_i * number_2.to_i
+  elsif operator == 'divided_by'
+    total = number_1.to_i / number_2.to_i
+  else
+    "Invalid operator. Please use: 'plus (+)', 'minus (-)', 'times (*)', 'divided_by (/)'"
+  end
+  "Calculate: #{number_1} #{operator} #{number_2} = #{total}"
+end
