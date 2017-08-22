@@ -51,3 +51,16 @@ end
 get '/contact/' do
   "Shoot us some mail: #{params[:street_number]} #{params[:street_name]}, #{params[:city]}, #{params[:state]}, #{params[:country]}."
 end
+
+# write '/great_job' route that takes a
+# name as a query parameter and says "Good Job, [name]!"
+# if the query parament is absent, say "Good job!"
+
+get '/great_job' do
+  name = params[:name]
+  if name
+  "Good job, #{params[:name]}!"
+  else
+    "Good job!"
+  end
+end
