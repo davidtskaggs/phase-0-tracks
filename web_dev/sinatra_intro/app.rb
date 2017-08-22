@@ -48,7 +48,6 @@ end
 # write a '/contact' route that displays
 # an address
 
-get '/contact' do
-  home_address = "1234 Example Lane, SunnyTown USA"
-  "Shoot us some mail: #{home_address}"
+get '/contact/' do
+  "Shoot us some mail: #{params[:street_number]} #{params[:street_name]}, #{params[:city]}, #{params[:state]}, #{params[:country]}."
 end
