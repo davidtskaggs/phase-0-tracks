@@ -1,11 +1,19 @@
 body {
-  background: #1ff4a3;
-  color: #fff;
-  margin:0;
+  background: #b3e5d0;
+  color: #070707;
+  position: absolute;
   padding:40px;
-  font-family:sans-serif;
-  text-transform:uppercase;
-  position:relative;
   font-weight:700;
+  font-family: sans-serif;
+
 }
+
+h1 {
+  text-transform:uppercase;
+  font-size: 24px;
+}
+
+
+
+
 
