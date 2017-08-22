@@ -27,6 +27,7 @@ end
 # all student data
 get '/students' do
   students = db.execute("SELECT * FROM students")
+  p students
   response = ""
   students.each do |student|
     response << "ID: #{student['id']}<br>"
