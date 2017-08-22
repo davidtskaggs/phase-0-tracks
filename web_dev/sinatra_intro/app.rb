@@ -9,6 +9,8 @@ db.results_as_hash = true
 # add a query parameter
 # GET /
 get '/' do
+  name = params[:name]
+  # p params
   "#{params[:name]} is #{params[:age]} years old."
 end
 
