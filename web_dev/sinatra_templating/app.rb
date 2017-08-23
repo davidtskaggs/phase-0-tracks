@@ -38,5 +38,3 @@ get '/student/age/new' do
   redirect '/'
   # Updated age using url for example student: http://localhost:9393/student/age/new?age=18&name=Twila%20Ortiz
 end
-
-# add static resources
