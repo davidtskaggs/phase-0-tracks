@@ -24,4 +24,15 @@ post '/students' do
   redirect '/'
 end
 
+get '/student/age/update' do
+  erb :update_age
+  # p "update age here"
+end
+
+post '/student/age' do
+  db.execute("UPDATE students SET age=? WHERE name=?", [params['age'].to_i, params['name']])
+  redirect '/'
+end
+
+
 # add static resources
