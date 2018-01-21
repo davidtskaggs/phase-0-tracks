@@ -10,6 +10,7 @@
 // return the reversed string
 
 // Function that iterates through str and adds each item (reverse order) to a new string.
+
 function reverseStr(str) {
   var reversedStr = "";
   var isPalindrome = false;
