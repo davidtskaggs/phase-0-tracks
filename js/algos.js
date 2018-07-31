@@ -31,7 +31,6 @@ function compareObjs(obj1, obj2) {
 // compareObjs({name: "Steven", age: 54}, {name: "Tamir", age: 54})
 // compareObjs({animal: "cat", legs: 4}, {animal: "Dog", legs: 3});
 
-
 // Release 2: Generate Random Test Data
 function alphabetFunc() {
 alphabetArray = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
@@ -70,6 +69,7 @@ function randomLetterGen(arr_of_nums, alphabetFunc) {
 // Release 2: Question 2 
 // For this question, I am unclear based on the directions if the driver code below is sufficient;
 // Or if the the method calls should be stored in a variable and then passed as an arguement to a method. 
+
 findLongestWord(randomLetterGen(randomNumGen, alphabet))
 console.log("----------")
 findLongestWord(randomLetterGen(randomNumGen, alphabet))
